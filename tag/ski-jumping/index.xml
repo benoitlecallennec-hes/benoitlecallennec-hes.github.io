@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Ski jumping | </title>
+    <link>https://lecallennec.com/tag/ski-jumping/</link>
+      <atom:link href="https://lecallennec.com/tag/ski-jumping/index.xml" rel="self" type="application/rss+xml" />
+    <description>Ski jumping</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021, Benoit Le Callennec</copyright><lastBuildDate>Thu, 01 Mar 2012 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lecallennec.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Ski jumping</title>
+      <link>https://lecallennec.com/tag/ski-jumping/</link>
+    </image>
+    
+    <item>
+      <title>Automatic measurement of key ski jumping phases and temporal events with a wearable system</title>
+      <link>https://lecallennec.com/publication/jss_2012/</link>
+      <pubDate>Thu, 01 Mar 2012 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/jss_2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automatic Detection of Key Events During the Takeoff Phase of Ski Jumps Using Body Fixed Sensors</title>
+      <link>https://lecallennec.com/publication/ecss_2008/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/ecss_2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Take-off Timing Analysis of Simulation Ski Jumps Using an Ambulatory System</title>
+      <link>https://lecallennec.com/publication/sss_2008/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/sss_2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ski Jumping Motion Analysis using Interial Sensors.</title>
+      <link>https://lecallennec.com/project/ski-jumping/</link>
+      <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/project/ski-jumping/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kinematics of Ski Jumpers for Performance Evaluation</title>
+      <link>https://lecallennec.com/publication/wda3ds_2007/</link>
+      <pubDate>Wed, 01 Aug 2007 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/wda3ds_2007/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

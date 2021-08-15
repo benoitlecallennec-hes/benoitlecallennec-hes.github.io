@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch-Based Interfaces | </title>
+    <link>https://lecallennec.com/tag/sketch-based-interfaces/</link>
+      <atom:link href="https://lecallennec.com/tag/sketch-based-interfaces/index.xml" rel="self" type="application/rss+xml" />
+    <description>Sketch-Based Interfaces</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021, Benoit Le Callennec</copyright><lastBuildDate>Fri, 01 Jan 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lecallennec.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Sketch-Based Interfaces</title>
+      <link>https://lecallennec.com/tag/sketch-based-interfaces/</link>
+    </image>
+    
+    <item>
+      <title>Mosketch: quick and easy 3D character animation.</title>
+      <link>https://lecallennec.com/project/mosketch/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/project/mosketch/</guid>
+      <description>&lt;p&gt;With Mosketch, users can animate any 3D character using joints only. Complex control rigs are not needed anymore! Sketch on your 3D character joints to quickly design key poses. Creating animation is made simple and intuitive. With its unique Up-and Down-influence, Mosketch provides quick and full control on any joint, its parent and its descendants.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/m_iqDW6fKSI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+  </channel>
+</rss>

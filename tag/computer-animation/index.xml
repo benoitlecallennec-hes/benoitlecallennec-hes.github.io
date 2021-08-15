@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Computer Animation | </title>
+    <link>https://lecallennec.com/tag/computer-animation/</link>
+      <atom:link href="https://lecallennec.com/tag/computer-animation/index.xml" rel="self" type="application/rss+xml" />
+    <description>Computer Animation</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>©2021, Benoit Le Callennec</copyright><lastBuildDate>Mon, 01 Aug 2016 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://lecallennec.com/media/icon_hu0b7a4cb9992c9ac0e91bd28ffd38dd00_9727_512x512_fill_lanczos_center_3.png</url>
+      <title>Computer Animation</title>
+      <link>https://lecallennec.com/tag/computer-animation/</link>
+    </image>
+    
+    <item>
+      <title> Parallel Inverse Kinematics for Multithreaded Architectures</title>
+      <link>https://lecallennec.com/publication/tog_2016/</link>
+      <pubDate>Mon, 01 Aug 2016 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/tog_2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Artist-Oriented 3D Character Posing from 2D Strokes</title>
+      <link>https://lecallennec.com/publication/cng_2016/</link>
+      <pubDate>Tue, 01 Mar 2016 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/cng_2016/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mosketch: quick and easy 3D character animation.</title>
+      <link>https://lecallennec.com/project/mosketch/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/project/mosketch/</guid>
+      <description>&lt;p&gt;With Mosketch, users can animate any 3D character using joints only. Complex control rigs are not needed anymore! Sketch on your 3D character joints to quickly design key poses. Creating animation is made simple and intuitive. With its unique Up-and Down-influence, Mosketch provides quick and full control on any joint, its parent and its descendants.&lt;/p&gt;
+
+&lt;div style=&#34;position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;&#34;&gt;
+  &lt;iframe src=&#34;https://www.youtube.com/embed/m_iqDW6fKSI&#34; style=&#34;position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;&#34; allowfullscreen title=&#34;YouTube Video&#34;&gt;&lt;/iframe&gt;
+&lt;/div&gt;
+
+</description>
+    </item>
+    
+    <item>
+      <title>Automatic measurement of key ski jumping phases and temporal events with a wearable system</title>
+      <link>https://lecallennec.com/publication/jss_2012/</link>
+      <pubDate>Thu, 01 Mar 2012 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/jss_2012/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automatic Detection of Key Events During the Takeoff Phase of Ski Jumps Using Body Fixed Sensors</title>
+      <link>https://lecallennec.com/publication/ecss_2008/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/ecss_2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Take-off Timing Analysis of Simulation Ski Jumps Using an Ambulatory System</title>
+      <link>https://lecallennec.com/publication/sss_2008/</link>
+      <pubDate>Fri, 01 Aug 2008 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/sss_2008/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Kinematics of Ski Jumpers for Performance Evaluation</title>
+      <link>https://lecallennec.com/publication/wda3ds_2007/</link>
+      <pubDate>Wed, 01 Aug 2007 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/wda3ds_2007/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robust Kinematic Constraint Detection for Motion Data</title>
+      <link>https://lecallennec.com/publication/sca_2006/</link>
+      <pubDate>Tue, 01 Aug 2006 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/sca_2006/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interactive motion deformation with prioritized constraints</title>
+      <link>https://lecallennec.com/publication/gm_2006/</link>
+      <pubDate>Wed, 01 Mar 2006 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/gm_2006/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interactive Motion Editing</title>
+      <link>https://lecallennec.com/project/interactive-motion-editing/</link>
+      <pubDate>Wed, 01 Mar 2006 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/project/interactive-motion-editing/</guid>
+      <description>&lt;p&gt;Convincingly animating virtual humans has become of great interest in many fields since recent years.
+In computer games for example, virtual humans often are the main characters.
+Failing to realistically animate them may wreck all previous efforts made to provide the player with an immersion feeling.
+At the same time, computer generated movies have become very popular and thus have increased the demand for animation realism.
+Indeed, virtual humans are now the new stars in movies like Final Fantasy or Shrek, or are even used for special effects in movies like Matrix.
+In this context, Virtual human animations not only need to be realistic as for computer games, but really need to be expressive as for real actors.
+While creating animations from scratch is still widespread, it demands artistic skills and hours if not days to produce few seconds of animation.
+For these reasons, there has been a growing interest for motion capture: instead of creating a motion, the idea is to reproduce the movements of a live performer.
+However, motion capture is not perfect and still needs improvements. Indeed, the motion capture process involves complex techniques and equipments.
+This often results in noisy animations which must be edited. Moreover, it is hard to exactly foresee the final motion. For example, it often happens that the director of a movie decides to change the script. The animators then have to change part or the whole animation.
+&lt;strong&gt;The aim of this thesis is then to provide animators with interactive tools helping them to easily and rapidly modify preexisting animations.&lt;/strong&gt;
+We first present our IK solver used to enforce kinematic constraints at each time of an animation. Afterward, we propose a motion deformation framework offering the user a way to specify prioritized constraints and to edit an initial animation so that it may be used in a new context (characters, environment,etc).
+Finally, we introduce a semi-automatic algorithm to extract important motion features from motion capture animation which may serve as a first guess for the animators when specifying important characteristics an initial animation should respect.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Interactive Techniques For Motion Deformation Of Articulated Figures Using Prioritized Constraints</title>
+      <link>https://lecallennec.com/publication/phd_2006/</link>
+      <pubDate>Wed, 01 Mar 2006 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/phd_2006/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Interactive Motion Deformation with Prioritized Constraints</title>
+      <link>https://lecallennec.com/publication/sca_2004/</link>
+      <pubDate>Sun, 01 Aug 2004 00:00:00 +0000</pubDate>
+      <guid>https://lecallennec.com/publication/sca_2004/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
