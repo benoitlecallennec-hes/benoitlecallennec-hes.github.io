@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapitre 2.1 : caméras#Les caméras spécifient comment les objets 3D sont projetés (transformés) sur l&rsquo;écran 2D. Elles définissent donc quels objets 3D seront visibles par l&rsquo;utilisateur final.
+Built-in, Universal and High Definition Render Pipelines
+Dans Unity, les Components de type Camera sont différents en fonction du Render Pipeline utilisé. Dans ce cours, nous nous focalisons sur URP. Des liens sur la documentation relative aux Cameras pour le Built-in Render Pipeline et pour le High Definition Render Pipeline se trouvent dans les références.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Chapitre 2.1 : caméras" />
+<meta property="og:description" content="Chapitre 2.1 : caméras#Les caméras spécifient comment les objets 3D sont projetés (transformés) sur l&rsquo;écran 2D. Elles définissent donc quels objets 3D seront visibles par l&rsquo;utilisateur final.
+Built-in, Universal and High Definition Render Pipelines
+Dans Unity, les Components de type Camera sont différents en fonction du Render Pipeline utilisé. Dans ce cours, nous nous focalisons sur URP. Des liens sur la documentation relative aux Cameras pour le Built-in Render Pipeline et pour le High Definition Render Pipeline se trouvent dans les références." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dev7629.dgs5n5xung966.amplifyapp.com/docs/cours/02_01-cameras/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2022-01-19T23:19:15+01:00" />
+
+<title>Chapitre 2.1 : caméras | HE-Arc | 3252.1 Introduction à Unity</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.dd45bb2be06d3824619a5d51f47bdf55c0288dbd629dfa4d140f41732aab37ff.js" integrity="sha256-3UW7K&#43;BtOCRhml1R9HvfVcAojb1infpNFA9BcyqrN/8="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-183976366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>HE-Arc | 3252.1 Introduction à Unity</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/00-introduction/" class="">Chapitre 0 : introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_01-prise-en-main/" class="">Chapitre 1.1 : prise en main</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_02-gameobjects-components-et-transforms/" class="">Chapitre 1.2 : GameObjects, Components et Transforms</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_03-prefabs-et-assets/" class="">Chapitre 1.3 : Prefabs et Assets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_01-cameras/" class="active">Chapitre 2.1 : caméras</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_02-materiaux/" class="">Chapitre 2.2 : matériaux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_03-illumination/" class="">Chapitre 2.3 : illumination</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/03-scripting/" class="">Chapitre 3 : scripting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/04_01-animation-de-personnages-3d/" class="">Chapitre 4.1 : animation de personnages 3D</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/05-illumination-globale/" class="">Chapitre 5 : illumination globale</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/06-post-processing/" class="">Chapitre 6 : post-processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/07-shadergraph/" class="">Chapitre 7 : Shader Graph</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Articles
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Chapitre 2.1 : caméras</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#culling-mask">Culling Mask</a></li>
+    <li><a href="#output-texture">Output Texture</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapitre-21--caméras">
+  Chapitre 2.1 : caméras
+  <a class="anchor" href="#chapitre-21--cam%c3%a9ras">#</a>
+</h1>
+<p>Les caméras spécifient comment les objets 3D sont projetés (transformés) sur l&rsquo;écran 2D.
+Elles définissent donc quels objets 3D seront visibles par l&rsquo;utilisateur final.</p>
+<blockquote class="book-hint warning">
+  <p><strong>Built-in, Universal and High Definition Render Pipelines</strong></p>
+<p>Dans Unity, les <b><code>Components</code></b> de type <b><code>Camera</code></b> sont différents en fonction du <b><code>Render Pipeline</code></b> utilisé.
+Dans ce cours, nous nous focalisons sur URP.
+Des liens sur la documentation relative aux <b><code>Cameras</code></b> pour le <b><code>Built-in Render Pipeline</code></b> et pour le <b><code>High Definition Render Pipeline</code></b> se trouvent dans les références.</p>
+
+</blockquote>
+
+<p>Dans Unity, les <b><code>Cameras</code></b><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> sont composées et représentées de la manière suivante :
+<figure><img src="/images/UnityCamera.png#center"/>
+</figure>
+
+On peut en particulier noter :</p>
+<ol>
+<li>le <b><code>Gizmo</code></b> de la <b><code>Camera</code></b> et son icône associée dans la scène 3D;</li>
+<li>le frustum de la <b><code>Camera</code></b>;</li>
+<li>une fenêtre de preview visible dans la scène 3D lorsque qu&rsquo;une <b><code>Camera</code></b> est sélectionnée;</li>
+<li>le <b><code>Component</code></b> <b><code>Camera</code></b> qui contient les vraies fonctionnalités.</li>
+</ol>
+<p>Il est important de rappeler qu&rsquo;une <b><code>Camera</code></b> est un <b><code>GameObject</code></b> et contient donc au moins un <b><code>Transform</code></b>.</p>
+<p>De manière simplifiée, on peut imaginer qu&rsquo;une caméra prend des entrées, effectue des calculs, et stocke les résultats dans des sorties :</p>
+<ul>
+<li><strong>les entrées :</strong> la liste d’objets 3D à projeter ainsi que les paramètres de la <b><code>Camera</code></b>;</li>
+<li><strong>les sorties :</strong> l&rsquo;image finale (<b><code>Color Buffer</code></b>) et les informations de profondeur (<b><code>Depth Buffer</code></b> ou <b><code>Z-Buffer</code></b>).</li>
+</ul>
+<p>Les paramètres les plus utiles du <b><code>Component</code></b> <b><code>Camera</code></b> sont :</p>
+<ul>
+<li><b><code>Environment / Background Type</code></b> : spécifie la couleur ou l&rsquo;image du fond.
+C&rsquo;est ce qui doit être affiché dans les espaces vides, c&rsquo;est-à-dire les espaces de l&rsquo;image finale dans lesquels aucun objet 3D n&rsquo;est présent.</li>
+<li><b><code>Projection / Projection</code></b> : définit le type de projection à effectuer.
+Elle peut-être perspective ou orthogonale.</li>
+<li><b><code>Projection / Field of View</code></b> : correspond à l&rsquo;angle de vue (horizontal ou vertical) de la <b><code>Camera</code></b>.</li>
+<li><b><code>Projection / Clipping Planes</code></b> : ce paramètre permet d&rsquo;ignorer les objets qui sont trop près ou au contraire trop éloignés.</li>
+<li><b><code>Output / Viewport Rect</code></b> : permet d&rsquo;afficher l&rsquo;image finale sur une sous-partie de l&rsquo;écran seulement.</li>
+</ul>
+<p>Certains paramètres offrent des fonctionnalités très intéressantes et méritent d&rsquo;être un peu plus détaillés.</p>
+<h2 id="culling-mask">
+  Culling Mask
+  <a class="anchor" href="#culling-mask">#</a>
+</h2>
+<p>Le paramètre <b><code>Rendering / Culling Mask</code></b> permet de spécifier quels groupes d&rsquo;objets 3D doivent être considérés (et donc rendus) par la <b><code>Camera</code></b>.
+<figure><img src="/images/UnityCameraCullingMask.png#center"/>
+</figure>
+</p>
+<p>Un <b><code>Culling Mask</code></b> permet par exemple de créer des mini-maps avec une <b><code>Camera</code></b> qui fait le rendu de la scène 3D en vue du dessus, en ne considérant que certains objets particuliers.
+Par exemple, on peut souhaiter ignorer le personnage principal, mais uniquement utiliser une représentation simplifiée sur la mini-map.</p>
+<h2 id="output-texture">
+  Output Texture
+  <a class="anchor" href="#output-texture">#</a>
+</h2>
+<p>Le paramètre <b><code>Output / Output Texture</code></b> permet de sauvegarder le rendu final dans une texture de rendu (<b><code>Render Texture</code></b>), plutôt que de l&rsquo;afficher sur l&rsquo;écran.
+Cette <b><code>Render Texture</code></b> peut ensuite être réutilisée en temps-réel dans la scène 3D.</p>
+<p>Pour attacher une <b><code>Render Texture</code></b> à une caméra par l&rsquo;intermédiaire du paramètre <em><strong>Output Texture</strong></em>, il faut d&rsquo;abord la créer sous forme d&rsquo;<em><strong>Asset</strong></em>.
+Pour ce faire, il faut aller dans le menu <code>Assets/Create/Render Texture</code>, comme indiqué sur l&rsquo;image suivante :
+<figure><img src="/images/UnityCreateRenderTexture.png#center"/>
+</figure>
+</p>
+<p>Les <b><code>Render Textures</code></b> sont utiles par exemple pour :</p>
+<ul>
+<li>avoir plusieurs rendus de <b><code>Camera</code></b> dans la même vue (vue top, left, right de la même scène);</li>
+<li>simuler des caméras de surveillance. On positionne des <b><code>Cameras</code></b> là où il y a des caméras de surveillance dans la scène 3D. Ensuite, les images calculées par les {&lt;unity_keyword Cameras&gt;}} sont stockées en temps-réel dans des <b><code>Render Texture</code></b>. Ces textures sont finalement plaquées sur des objets 3D représentant des écrans dans la scène 3D.</li>
+</ul>
+<h2 id="slides">
+  Slides
+  <a class="anchor" href="#slides">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src=https://unity3d.ch/Slides/Chap2_CamerasMateriauxEtIllumination.html frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 id="références">
+  Références
+  <a class="anchor" href="#r%c3%a9f%c3%a9rences">#</a>
+</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.7/manual/cameras.html">Cameras, URP, Unity</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+
+
+
+  
+  
+  
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>January 19, 2022<br>Benoit Le Callennec<br>61531ee</p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; HE-Arc 2020-2022 - Tous droits réservés.</footer>
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#culling-mask">Culling Mask</a></li>
+    <li><a href="#output-texture">Output Texture</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

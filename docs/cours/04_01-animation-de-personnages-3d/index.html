@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapitre 4.1 : animation de personnages 3D#L&rsquo;animation 3D englobe beaucoup de domaines, chacun avec ses propres techniques et spécificités. On peut noter par exemple :
+l&rsquo;animation de fluides (liquides, gaz, etc.); l&rsquo;animation de visages; l&rsquo;animation de particules; l&rsquo;animation de corps rigides (pierres qui roulent, collisions, etc.); et l&rsquo;animation de personnages. Il faut aussi noter que certaines de ces techniques sont calculables en temps-réel alors que d&rsquo;autres sont trop complexes et doivent être pré-calculées.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Chapitre 4.1 : animation de personnages 3D" />
+<meta property="og:description" content="Chapitre 4.1 : animation de personnages 3D#L&rsquo;animation 3D englobe beaucoup de domaines, chacun avec ses propres techniques et spécificités. On peut noter par exemple :
+l&rsquo;animation de fluides (liquides, gaz, etc.); l&rsquo;animation de visages; l&rsquo;animation de particules; l&rsquo;animation de corps rigides (pierres qui roulent, collisions, etc.); et l&rsquo;animation de personnages. Il faut aussi noter que certaines de ces techniques sont calculables en temps-réel alors que d&rsquo;autres sont trop complexes et doivent être pré-calculées." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dev7629.dgs5n5xung966.amplifyapp.com/docs/cours/04_01-animation-de-personnages-3d/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2022-03-09T10:45:10+01:00" />
+
+<title>Chapitre 4.1 : animation de personnages 3D | HE-Arc | 3252.1 Introduction à Unity</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.dd45bb2be06d3824619a5d51f47bdf55c0288dbd629dfa4d140f41732aab37ff.js" integrity="sha256-3UW7K&#43;BtOCRhml1R9HvfVcAojb1infpNFA9BcyqrN/8="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-183976366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>HE-Arc | 3252.1 Introduction à Unity</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/00-introduction/" class="">Chapitre 0 : introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_01-prise-en-main/" class="">Chapitre 1.1 : prise en main</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_02-gameobjects-components-et-transforms/" class="">Chapitre 1.2 : GameObjects, Components et Transforms</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_03-prefabs-et-assets/" class="">Chapitre 1.3 : Prefabs et Assets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_01-cameras/" class="">Chapitre 2.1 : caméras</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_02-materiaux/" class="">Chapitre 2.2 : matériaux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_03-illumination/" class="">Chapitre 2.3 : illumination</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/03-scripting/" class="">Chapitre 3 : scripting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/04_01-animation-de-personnages-3d/" class="active">Chapitre 4.1 : animation de personnages 3D</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/05-illumination-globale/" class="">Chapitre 5 : illumination globale</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/06-post-processing/" class="">Chapitre 6 : post-processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/07-shadergraph/" class="">Chapitre 7 : Shader Graph</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Articles
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Chapitre 4.1 : animation de personnages 3D</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#trouver-des-données-danimations-3d">Trouver des données d&rsquo;animations 3D</a>
+      <ul>
+        <li><a href="#unity-asset-store">Unity Asset Store</a></li>
+        <li><a href="#mixamo">Mixamo</a></li>
+      </ul>
+    </li>
+    <li><a href="#créer-un-moteur-danimation-3d">Créer un moteur d&rsquo;animation 3D</a>
+      <ul>
+        <li><a href="#état-simple">État simple</a></li>
+        <li><a href="#les-blend-trees">Les Blend Trees</a></li>
+      </ul>
+    </li>
+    <li><a href="#contrôler-le-moteur-danimations">Contrôler le moteur d&rsquo;animations</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapitre-41--animation-de-personnages-3d">
+  Chapitre 4.1 : animation de personnages 3D
+  <a class="anchor" href="#chapitre-41--animation-de-personnages-3d">#</a>
+</h1>
+<p>L&rsquo;animation 3D englobe beaucoup de domaines, chacun avec ses propres techniques et spécificités.
+On peut noter par exemple :</p>
+<ul>
+<li>l&rsquo;animation de fluides (liquides, gaz, etc.);</li>
+<li>l&rsquo;animation de visages;</li>
+<li>l&rsquo;animation de particules;</li>
+<li>l&rsquo;animation de corps rigides (pierres qui roulent, collisions, etc.);</li>
+<li>et l&rsquo;animation de personnages.</li>
+</ul>
+<p>Il faut aussi noter que certaines de ces techniques sont calculables en temps-réel alors que d&rsquo;autres sont trop complexes et doivent être pré-calculées.
+Enfin, certaines techniques sont hybrides : elles pré-calculent une partie des résultats, et les réutilisent en temps-réel pour finaliser l&rsquo;animation.</p>
+<p>La vidéo suivante par exemple montre une animation de fluide en partie pré-calculée, puis rejouée en temps-réel :
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/L36orF8rC-M" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<p>Ici, les lois de la physique sont utilisées pour calculer les mouvements de fourrure en temps-réel :
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/OdT2CUGBBkI" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<p>Enfin, la vidéo suivante montre une simulation physique de corps rigides en temps-réel :
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/tM1N5rd9W-8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<p>Dans cette section, nous allons nous concentrer sur l&rsquo;animation de personnages en 3D et en temps-réel, comme ce qui est montré sur la vidéo suivante :
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/gNDrjR45DGY" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<p>Ce que nous allons faire dans cette section :</p>
+<ol>
+<li>trouver des données d&rsquo;animations 3D existantes;</li>
+<li>créer un système pour animer notre personnage 3D. On parle de moteur d&rsquo;animation;</li>
+<li>contrôler notre moteur d&rsquo;animation en fonction des événements déclenchés (entrées de l&rsquo;utilisateur, collisions, etc).</li>
+</ol>
+<h2 id="trouver-des-données-danimations-3d">
+  Trouver des données d&rsquo;animations 3D
+  <a class="anchor" href="#trouver-des-donn%c3%a9es-danimations-3d">#</a>
+</h2>
+<p>Créer des animations 3D est très compliqué et demande beaucoup de temps.
+En particulier, chaque personnage 3D nécessite une configuration spécifique pour l&rsquo;animation 3D.
+Dans de nombreuses situations, il est donc trop complexe (et trop coûteux) de créer des animations 3D fabriquer spécifiquement pour notre application.
+Heureusement, il existe beaucoup de ressources permettant de facilement trouver, et télécharger des animations 3D utilisables dans Unity.</p>
+<h3 id="unity-asset-store">
+  Unity Asset Store
+  <a class="anchor" href="#unity-asset-store">#</a>
+</h3>
+<p>L&rsquo;<b><code>Asset Store</code></b> de Unity possède de nombreuses animations.
+Dans cette section par exemple, nous allons utiliser le <em><strong>Zombie Animation Pack Free</strong></em> :
+<figure><img src="/images/UnityZombieAnimationPack.png#center"/>
+</figure>
+</p>
+<p>Nous allons en particulier utiliser le personnage 3D présent dans le répertoire <code>Assets/ZombieAnimationPackFree/Models/Appearance/BH-2/Mesh</code> :
+<figure><img src="/images/UnityAddZombie.png#center"/>
+</figure>
+</p>
+<h3 id="mixamo">
+  Mixamo
+  <a class="anchor" href="#mixamo">#</a>
+</h3>
+<p>Mixamo<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> est une base de données interactive contenant beaucoup d&rsquo;animations 3D.
+C&rsquo;est une excellente solution car les données présentes sont gratuites.
+Mixamo propose donc une excellente alternative à l&rsquo;Asset Store de Unity.
+<figure><img src="/images/Mixamo.png#center"/>
+</figure>
+</p>
+<h2 id="créer-un-moteur-danimation-3d">
+  Créer un moteur d&rsquo;animation 3D
+  <a class="anchor" href="#cr%c3%a9er-un-moteur-danimation-3d">#</a>
+</h2>
+<p>Dans Unity, un moteur d&rsquo;animation 3D est représenté par un <b><code>Animator Controller</code></b><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.
+Une fois créé, ce <b><code>Component</code></b> doit être connecté à l&rsquo;<b><code>Animator</code></b> du personnage 3D que nous souhaitons animer comme le montre la figure qui suit :
+<figure><img src="/images/UnityAnimatorControllerComponent.png#center"/>
+</figure>
+</p>
+<p>Un <b><code>Animator Controller</code></b> est en fait une machine à états finis (un graphe) qui sert à :</p>
+<ol>
+<li>gérer les clips d&rsquo;animation 3D (on parle d&rsquo;<b><code>Animation Clips</code></b><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>);</li>
+<li>changer l&rsquo;animation courante (celle en train d&rsquo;être jouée) grâce aux <b><code>State Machine Transitions</code></b> et aux <b><code>Triggers</code></b><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>;</li>
+<li>mélanger les animations entre elles pour en créer de nouvelles en utilisant des <b><code>Blend Trees</code></b>.</li>
+</ol>
+<p>Les <b><code>Transitions</code></b> permettent de changer d&rsquo;animation active :</p>
+<ol>
+<li>en temps-réel;</li>
+<li>en fonction des entrées de l&rsquo;utilisateur;</li>
+<li>de manière fluide, sans secousse.</li>
+</ol>
+<p>Pour créer un <b><code>Animator Controller</code></b>, il faut aller dans le menu <code>Assets &gt; Create &gt; Animator Controller</code> comme indiqué sur la figure qui suit :
+<figure><img src="/images/UnityCreateAnimatorController.png#center"/>
+</figure>
+</p>
+<p>Il faut ensuite l&rsquo;assigner à l&rsquo;<b><code>Animator</code></b> du personnage 3D que l&rsquo;on souhaite animer puis l&rsquo;ouvrir dans l&rsquo;éditeur (en double cliquant dessus par exemple).
+Vous devriez obtenir une fenêtre ressemblant à la figure suivante :
+<figure><img src="/images/UnityEmptyAnimatorController.png#center"/>
+</figure>
+</p>
+<h3 id="état-simple">
+  État simple
+  <a class="anchor" href="#%c3%a9tat-simple">#</a>
+</h3>
+<p>Comme dit précédemment, un <b><code>Animator Controller</code></b> est une machine d&rsquo;états finis.
+Chaque état représente en fait une animation du personnage 3D.
+Pour rajouter un nouvel état à l&rsquo;<b><code>Animator Controller</code></b>, il suffit de faire un clic droit dans la fenêtre <code>Animator</code>, puis de sélectionner <code>Create State &gt; Empty</code> :
+<figure><img src="/images/UnityCreateNewState.png#center"/>
+</figure>
+</p>
+<p>À chaque état créé, on peut associer un <b><code>Animation Clip</code></b> comme indiqué sur la figure suivante :
+<figure><img src="/images/UnityAddMotionToState.png#center"/>
+</figure>
+</p>
+<p>Nous pouvons créer des transitions entre chaque état en faisant un clic droit sur l&rsquo;état initial de la transition, en sélectionnant <code>Make Transition</code>, puis en sélectionnant l&rsquo;état d&rsquo;arrivée :
+<figure><img src="/images/UnityMakeTransition.png#center"/>
+</figure>
+</p>
+<p>Enfin, nous pouvons rajouter des <b><code>Triggers</code></b> aux <b><code>Transitions</code></b> pour les activer lorsque certains événements sont déclenchés.
+Pour créer un <b><code>Trigger</code></b>, il faut aller dans <code>Parameters</code>, puis cliquer sur <code>+</code> et choisir <code>Trigger</code> :
+<figure><img src="/images/UnityCreateTrigger.png#center"/>
+</figure>
+</p>
+<p>Pour le rajouter à une transition, il suffit de la sélectionner.
+Puis dans l&rsquo;<code>Inspector</code>, aller dans le bloc <b><code>Conditions</code></b> pour en rajouter une, et sélectionner le <b><code>Triggers</code></b> précédemment créé :
+<figure><img src="/images/UnityAddTriggerToTransition.png#center"/>
+</figure>
+</p>
+<p>En utilisant le pack d&rsquo;animations 3D rajouté à notre projet, nous pouvons :</p>
+<ol>
+<li>créer 3 états intitulés <code>Idle</code>, <code>Hit</code> et <code>Attack</code>;</li>
+<li>leur associer les animations adéquates;</li>
+<li>rajouter les transitions nécessaires pour passer de <code>Idle</code> à <code>Hit</code> (et vice-versa) et de <code>Idle</code> à <code>Attack</code>;</li>
+<li>créer les <b><code>Triggers</code></b> <code>Hit</code> et <code>Attack</code> et les associer aux transitions adéquates.
+En suivant ces étapes, ceci nous donne un graphe qui ressemble à ceci :
+<figure><img src="/images/UnityAnimatorControllerWithStates.png#center"/>
+</figure>
+</li>
+</ol>
+<h3 id="les-blend-trees">
+  Les Blend Trees
+  <a class="anchor" href="#les-blend-trees">#</a>
+</h3>
+<p>Les <b><code>Blend Trees</code></b><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> permettent de combiner des <b><code>Animation Clips</code></b> en temps-réel afin de générer de nouvelles animations.
+Par exemple, vous pouvez combiner une animation de marche lente avec une animation de marche rapide pour créer des animations de marche à des vitesses variables.</p>
+<p>Les <b><code>Blend Trees</code></b> sont en fait contenus par certains états du graphe.
+Ils englobent plusieurs <b><code>Animation Clips</code></b> et un système pour interpoler entre eux.
+Il est possible de créer un état contenant un <b><code>Blend Tree</code></b> vide en faisant un clic droit dans la fenêtre <code>Animator</code> puis sélectionner <code>Create State &gt; From New Blend Tree</code> :
+<figure><img src="/images/UnityCreateStateWithBlendTree.png#center"/>
+</figure>
+</p>
+<p>Il est aussi possible de rajouter un <b><code>Blend Tree</code></b> dans un état existant en faisant un clic droit sur un état existant et en choisissant <code>Create new BlendTree in State</code> :
+<figure><img src="/images/UnityAddBlendTreeInState.png#center"/>
+</figure>
+</p>
+<p>Si l&rsquo;on crée un <b><code>Blend Tree</code></b> et qu&rsquo;on l&rsquo;ouvre en double-cliquant dessus, alors on obtient quelque chose comme ce qui suit dans l&rsquo;<code>Inspector</code> :
+<figure><img src="/images/UnityBlendTree.png#center"/>
+</figure>
+</p>
+<p>Dans un premier temps, il est important de choisir la façon donc le <b><code>Blend Tree</code></b> va interpoler les animations entre elles.
+Pour ceci, il existe plusieurs types d&rsquo;interpolation :</p>
+<ul>
+<li><strong>1D<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> :</strong> les animations sont interpolées en 1 dimension, donc selon un paramètre unique;</li>
+<li><strong>2D Simple Directional<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> :</strong> les animations sont interpolées en 2 dimensions, donc en utilisant 2 paramètres.
+Certaines restrictions (vitesses des animations, directions inférieures à 180°, etc.) peuvent limiter son utilisation;</li>
+<li><strong>2D Freeform Directional<sup id="fnref1:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> :</strong> ce type d&rsquo;interpolation est similaire à ce qui précède mais avec moins de contraintes.
+Il est cependant plus compliqué à utiliser;</li>
+<li><strong>2D Freeform Cartesian<sup id="fnref2:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> :</strong> ici l&rsquo;interpolation n&rsquo;est plus optimisée pour des animations de locomotion mais peut être utilisée pour interpoler toute sorte de mouvements.</li>
+<li><strong>Direct<sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> :</strong> ce dernier type d&rsquo;interpolation permet de gérer directement l&rsquo;interpolation avec plusieurs paramètres.</li>
+</ul>
+<p>Les <b><code>Blend Trees</code></b> demandent donc des paramètres en entrée pour calculer l&rsquo;interpolation.
+Ces paramètres sont rajoutés de manière identique aux <b><code>Triggers</code></b> vus précédemment.
+Dans le cas d&rsquo;un moteur d&rsquo;animation de locomotion par exemple, on peut vouloir contrôler la vitesse et la direction de déplacement.
+Dans ce cas, on peut créer des paramètres de type <b><code>Float</code></b>.
+Enfin, dans l&rsquo;<code>Inspector</code>, on rajoute ces paramètres comme entrées au <b><code>Blend Tree</code></b>.</p>
+<p>À ce stade, il nous reste encore à rajouter des <b><code>Animation Clips</code></b>.
+Pour ce faire, il faut aller dans la section <b><code>Motion</code></b> dans la fenêtre <code>Inspector</code>, cliquer sur le <code>+</code> et sélectionner <code>Add Motion Field</code> :
+<figure><img src="/images/UnityAddMotionFieldToBlendTree.png#center"/>
+</figure>
+</p>
+<p>À chaque <b><code>Motion Field</code></b> ainsi créé, on va associer des valeurs des paramètres du <b><code>Blend Tree</code></b>.
+Quand ces valeurs seront entrées dans le <b><code>Blend Tree</code></b>, alors l&rsquo;<b><code>Animation Clip</code></b> sera jouer à 100%.
+Sinon, le <b><code>Blend Tree</code></b> va prendre les mouvements les plus proches (en termes de valeurs des paramètres) et les interpoler.</p>
+<p>Pour reprendre notre exemple, nous devons donc :</p>
+<ol>
+<li>créer un <b><code>Blend Tree</code></b> dans l&rsquo;état <code>Idle</code>;</li>
+<li>rajouter 2 paramètres de type <code>Float</code> (appelés par exemple <code>Speed</code> et <code>Direction</code>) à notre <b><code>Animator Controller</code></b>;</li>
+<li>choisir le type <b><code>2D Freeform Direction</code></b> pour le paramètre <b><code>Blend Type</code></b>;</li>
+<li>rajouter 4 <b><code>Motion Fields</code></b> pour les <b><code>Animation Clips</code></b> souhaités dans le <b><code>Blend Tree</code></b> comme par exemple un mouvement <code>Idle</code>, <code>Move Forward</code>, <code>Move Left</code> et <code>Move Right</code>;</li>
+<li>pour chaque <b><code>Motion Field</code></b>, spécifier les valeurs <code>(vitesse, direction)</code> qu&rsquo;ils représentent.
+Par exemple, pour le mouvement <code>Idle</code>, alors on peut lui donner les valeur <code>(0, 0)</code>.
+Pour le mouvement <code>Move Forward</code> les valeurs <code>(1, 0)</code>.
+Pour le mouvement <code>Move Left</code> les valeurs <code>(1, -1)</code> et enfin pour le mouvement <code>Move Right</code> les valeurs <code>(1, 1)</code>.</li>
+</ol>
+<h2 id="contrôler-le-moteur-danimations">
+  Contrôler le moteur d&rsquo;animations
+  <a class="anchor" href="#contr%c3%b4ler-le-moteur-danimations">#</a>
+</h2>
+<p>Nous avons donc pour le moment un moteur d&rsquo;animations 3D qui a plusieurs paramètres.
+Il nous reste enfin à le modifier pour le faire réagir en temps-réel aux différents événements de notre application 3D.</p>
+<p>Les transitions ont des conditions qui leur sont attachées.
+Par exemple, la transition entre l&rsquo;état <code>Idle</code> et l&rsquo;état <code>Attack</code> va s&rsquo;activer lorsque l&rsquo;utilisateur active l&rsquo;<b><code>Axis</code></b> nommé <code>Fire1</code>.
+Pour ce faire, il suffit d&rsquo;attacher le <b><code>Script</code></b> suivant au personnage 3D :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Attack</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Animator m_animator;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start is called before the first frame update</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        m_animator = GetComponent&lt;Animator&gt;();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update is called once per frame</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Input.GetAxis(<span style="color:#e6db74">&#34;Fire1&#34;</span>) &gt; <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            m_animator.SetTrigger(<span style="color:#e6db74">&#34;Attack&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>Enfin, on peut modifier les paramètres <code>Speed</code> et <code>Direction</code> quand l&rsquo;utilisateur presse les touches associées aux <b><code>Axis</code></b> <code>Horizontal</code> et <code>Vertical</code> :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">UserControls</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> Animator m_animator;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start is called before the first frame update</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        m_animator = GetComponent&lt;Animator&gt;();
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update is called once per frame</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Input.GetAxis(<span style="color:#e6db74">&#34;Fire1&#34;</span>) &gt; <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            m_animator.SetTrigger(<span style="color:#e6db74">&#34;Attack&#34;</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">float</span> speed = Input.GetAxis(<span style="color:#e6db74">&#34;Vertical&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (speed != <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            m_animator.SetFloat(<span style="color:#e6db74">&#34;Speed&#34;</span>, speed);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">float</span> direction = Input.GetAxis(<span style="color:#e6db74">&#34;Horizontal&#34;</span>);
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (direction != <span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            m_animator.SetFloat(<span style="color:#e6db74">&#34;Direction&#34;</span>, direction);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h2 id="slides">
+  Slides
+  <a class="anchor" href="#slides">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src=https://unity3d.ch/Slides/Chap4_Animation3D.html frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 id="références">
+  Références
+  <a class="anchor" href="#r%c3%a9f%c3%a9rences">#</a>
+</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://www.mixamo.com/">Mixamo</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://docs.unity3d.com/Manual/AnimatorControllers.html">Animator Controllers, Unity</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://docs.unity3d.com/Manual/AnimationClips.html">Animation Clips, Unity</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://docs.unity3d.com/Manual/StateMachineTransitions.html">State Machine Transitions, Unity</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://docs.unity3d.com/Manual/class-BlendTree.html">Blend Trees, Unity</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://docs.unity3d.com/Manual/BlendTree-1DBlending.html">1D Blending, Unity</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://docs.unity3d.com/Manual/BlendTree-2DBlending.html">2D Blending, Unity</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref2:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://docs.unity3d.com/Manual/BlendTree-DirectBlending.html">Direct Blending, Unity</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+
+
+
+  
+  
+  
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>March 09, 2022<br>Benoit Le Callennec<br>0a0876c</p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; HE-Arc 2020-2022 - Tous droits réservés.</footer>
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#trouver-des-données-danimations-3d">Trouver des données d&rsquo;animations 3D</a>
+      <ul>
+        <li><a href="#unity-asset-store">Unity Asset Store</a></li>
+        <li><a href="#mixamo">Mixamo</a></li>
+      </ul>
+    </li>
+    <li><a href="#créer-un-moteur-danimation-3d">Créer un moteur d&rsquo;animation 3D</a>
+      <ul>
+        <li><a href="#état-simple">État simple</a></li>
+        <li><a href="#les-blend-trees">Les Blend Trees</a></li>
+      </ul>
+    </li>
+    <li><a href="#contrôler-le-moteur-danimations">Contrôler le moteur d&rsquo;animations</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

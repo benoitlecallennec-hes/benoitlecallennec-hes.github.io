@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Artist-Oriented 3D Character Posing from 2D Strokes#Mentar Mahmudi, Pawan Kumar Harish, Benoit Le Callennec, Ronan Boulic. Computers &amp; Graphics, 2016.#ABSTRACT#In this paper we present an intuitive tool suitable for 2D artists using touch-enabled pen tablets. An artist-oriented tool should be easy-to-use, real-time, versatile, and locally refinable. Our approach uses an interactive system for 3D character posing from 2D strokes. We employ a closed-form solution for the 2D strokes to 3D skeleton registration problem.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Artist-Oriented 3D Character Posing from 2D Strokes" />
+<meta property="og:description" content="Artist-Oriented 3D Character Posing from 2D Strokes#Mentar Mahmudi, Pawan Kumar Harish, Benoit Le Callennec, Ronan Boulic. Computers &amp; Graphics, 2016.#ABSTRACT#In this paper we present an intuitive tool suitable for 2D artists using touch-enabled pen tablets. An artist-oriented tool should be easy-to-use, real-time, versatile, and locally refinable. Our approach uses an interactive system for 3D character posing from 2D strokes. We employ a closed-form solution for the 2D strokes to 3D skeleton registration problem." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.lecallennec.com/docs/publications/cng_2016/" /><meta property="og:image" content="https://www.lecallennec.com/docs/publications/cng_2016/featured.jpg"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2016-03-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2016-03-01T00:00:00+00:00" />
+
+<title>Artist-Oriented 3D Character Posing from 2D Strokes | Benoit Le Callennec</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.4ab25d1e764ff9c40f9d20ae76b7a412d31eeef8870738d67d3dc9062e77a9a4.js" integrity="sha256-SrJdHnZP&#43;cQPnSCudrekEtMe7viHBzjWfT3JBi53qaQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3BG1HKYZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T3BG1HKYZW');
+</script>
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Benoit Le Callennec</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/projects/" class="">PROJECTS</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/publications/" class="">PUBLICATIONS</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/teaching/" class="">TEACHING</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        ARTICLES
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">  
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Artist-Oriented 3D Character Posing from 2D Strokes</strong>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="artist-oriented-3d-character-posing-from-2d-strokes">
+  Artist-Oriented 3D Character Posing from 2D Strokes
+  <a class="anchor" href="#artist-oriented-3d-character-posing-from-2d-strokes">#</a>
+</h1>
+<h3 id="mentar-mahmudi-pawan-kumar-harish-benoit-le-callennec-ronan-boulic-computers--graphics-2016">
+  Mentar Mahmudi, Pawan Kumar Harish, Benoit Le Callennec, Ronan Boulic. Computers &amp; Graphics, 2016.
+  <a class="anchor" href="#mentar-mahmudi-pawan-kumar-harish-benoit-le-callennec-ronan-boulic-computers--graphics-2016">#</a>
+</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/GnI_QES0tB8" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="abstract">
+  ABSTRACT
+  <a class="anchor" href="#abstract">#</a>
+</h2>
+<p>In this paper we present an intuitive tool suitable for 2D artists using touch-enabled pen tablets. An artist-oriented tool should be easy-to-use, real-time, versatile, and locally refinable. Our approach uses an interactive system for 3D character posing from 2D strokes. We employ a closed-form solution for the 2D strokes to 3D skeleton registration problem. We first construct an intermediate 2D stroke representation by extracting local features using meaningful heuristics. Then, we match 2D stroke segments to 3D bones. Finally, 3D bones are carefully realigned with the matched 2D stroke segments while enforcing important constraints such as bone rigidity and depth. Our technique is real-time and has a linear time complexity. It is versatile, as it works with any type of 2D stroke and 3D skeleton input. Finally, thanks to its coarse-to-fine design, it allows users to perform local refinements and thus keep full control over the final results. We demonstrate that our system is suitable for 2D artists using touch-enabled pen tablets by posing 3D characters with heterogeneous topologies (bipeds, quadrupeds, hands) in real-time.</p>
+<p>
+
+
+
+  
+
+<a  href="/docs/projects/mosketch/"   class="book-btn">
+  PROJECT
+</a>
+
+
+
+
+  
+  
+
+
+<a  href="https://www.sciencedirect.com/science/article/pii/S0097849316300218"   target="_blank"  class="book-btn">
+  VIEW AT PUBLISHER
+</a>
+</p>
+</article>
+ 
+      
+
+
+
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>September 14, 2022<br>Generated content<br> </p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; Le Callennec 2020-2023 - Tous droits réservés.</footer>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

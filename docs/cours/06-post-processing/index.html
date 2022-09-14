@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapitre 6 : post-processing#Les effets de Post-Processing1 sont appliqués à l&rsquo;image rendue par la caméra dans la scène. Ils sont très variés et permettent d&rsquo;améliorer significativement le rendu final. Il est par exemple possible de rajouter du flou de bougé (Motion Blur), d&rsquo;échantillonner les couleurs, ou encore de rajouter un effet de vignettage.
+Les effets de Post-Processing dépendent évidemment de l&rsquo;image finale rendue. Mais ils dépendent aussi de la position de la caméra dans la scène : il est ainsi possible d&rsquo;activer certains effets en fonction de la position courante de cette dernière.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Chapitre 6 : post-processing" />
+<meta property="og:description" content="Chapitre 6 : post-processing#Les effets de Post-Processing1 sont appliqués à l&rsquo;image rendue par la caméra dans la scène. Ils sont très variés et permettent d&rsquo;améliorer significativement le rendu final. Il est par exemple possible de rajouter du flou de bougé (Motion Blur), d&rsquo;échantillonner les couleurs, ou encore de rajouter un effet de vignettage.
+Les effets de Post-Processing dépendent évidemment de l&rsquo;image finale rendue. Mais ils dépendent aussi de la position de la caméra dans la scène : il est ainsi possible d&rsquo;activer certains effets en fonction de la position courante de cette dernière." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dev7629.dgs5n5xung966.amplifyapp.com/docs/cours/06-post-processing/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2022-03-09T22:04:16+01:00" />
+
+<title>Chapitre 6 : post-processing | HE-Arc | 3252.1 Introduction à Unity</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.dd45bb2be06d3824619a5d51f47bdf55c0288dbd629dfa4d140f41732aab37ff.js" integrity="sha256-3UW7K&#43;BtOCRhml1R9HvfVcAojb1infpNFA9BcyqrN/8="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-183976366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>HE-Arc | 3252.1 Introduction à Unity</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/00-introduction/" class="">Chapitre 0 : introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_01-prise-en-main/" class="">Chapitre 1.1 : prise en main</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_02-gameobjects-components-et-transforms/" class="">Chapitre 1.2 : GameObjects, Components et Transforms</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_03-prefabs-et-assets/" class="">Chapitre 1.3 : Prefabs et Assets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_01-cameras/" class="">Chapitre 2.1 : caméras</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_02-materiaux/" class="">Chapitre 2.2 : matériaux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_03-illumination/" class="">Chapitre 2.3 : illumination</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/03-scripting/" class="">Chapitre 3 : scripting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/04_01-animation-de-personnages-3d/" class="">Chapitre 4.1 : animation de personnages 3D</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/05-illumination-globale/" class="">Chapitre 5 : illumination globale</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/06-post-processing/" class="active">Chapitre 6 : post-processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/07-shadergraph/" class="">Chapitre 7 : Shader Graph</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Articles
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Chapitre 6 : post-processing</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapitre-6--post-processing">
+  Chapitre 6 : post-processing
+  <a class="anchor" href="#chapitre-6--post-processing">#</a>
+</h1>
+<p>Les effets de <b><code>Post-Processing</code></b><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> sont appliqués à l&rsquo;image rendue par la caméra dans la scène.
+Ils sont très variés et permettent d&rsquo;améliorer significativement le rendu final.
+Il est par exemple possible de rajouter du flou de bougé (<b><code>Motion Blur</code></b>), d&rsquo;échantillonner les couleurs, ou encore de rajouter un effet de vignettage.</p>
+<p>Les effets de <b><code>Post-Processing</code></b> dépendent évidemment de l&rsquo;image finale rendue.
+Mais ils dépendent aussi de la position de la caméra dans la scène : il est ainsi possible d&rsquo;activer certains effets en fonction de la position courante de cette dernière.</p>
+<p>Pour activer le calcul des effets de <b><code>Post-Processing</code></b> pour la caméra qui nous intéresse, il faut sélectionner notre <b><code>Camera</code></b>, et dans la section <b><code>Rendering</code></b>, activer le paramètre <b><code>Post Processing</code></b> :
+<figure><img src="/images/UnityCameraPostProcessingSetting.png#center"/>
+</figure>
+</p>
+<p>Les effets de <b><code>Post-Processing</code></b> sont attachés à un <b><code>Volume</code></b> : quand la caméra entre dans ce <b><code>Volume</code></b>, les effets sont appliqués.
+Pour commencer, nous pouvons créer un <b><code>Global Volume</code></b> : dans ce cas, les effets attachés à ce <b><code>Volume</code></b> sont toujours appliqués à la caméra.
+Il faut donc aller dans le menu <code>GameObjects &gt; Volume &gt; Global Volume</code> :
+<figure><img src="/images/UnityCreateVolumeMenu.png#center"/>
+</figure>
+</p>
+<p>Tous les paramètres de tous les effets de <b><code>Post-Processing</code></b> d&rsquo;un <b><code>Volume</code></b> sont stockés dans un <b><code>Profile</code></b>.
+Il faut donc, dans un premier temps, créer un <b><code>Profile</code></b> et l&rsquo;attacher au <b><code>Volume</code></b> que nous venons de créer.
+Pour ce faire, il suffit d&rsquo;aller sur le paramètre <b><code>Profile</code></b> de notre <b><code>Volume</code></b> et de cliquer sur le bouton <code>New</code> :
+<figure><img src="/images/UnityCreateNewProfileButton.png#center"/>
+</figure>
+</p>
+<p>Le <b><code>Profile</code></b> est automatiquement créé et attaché au <b><code>Volume</code></b>.
+De plus, tous les paramètres sont automatiquement initialisés avec des valeurs par défaut, et sont tous initialement cachés.</p>
+<p>Pour modifier les paramètres des effets de <b><code>Post-Processing</code></b>, il faut donc ajouter des <b><code>Overrides</code></b> au <b><code>Profile</code></b>.
+Ceci se fait en cliquant sur le bouton <code>Add Override</code> dans le <b><code>Volume</code></b> :
+<figure><img src="/images/UnityAddOverrideButton.png#center"/>
+</figure>
+
+Il y a un <b><code>Override</code></b> par effet de <b><code>Post-Processing</code></b>.
+Il existe beaucoup d&rsquo;effets disponibles et ils dépendent du pipeline de rendu utilisé.
+La vidéo suivante détaille la plupart des effets et leur impact sur le rendu final de la caméra pour le pipeline de rendu URP :</p>
+<center>
+<iframe width="734" height="413" src="https://www.youtube.com/embed/9tjYz6Ab0oc?start=220"
+frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<p>Il est possible de modifier le mode de fonctionnement du <b><code>Volume</code></b> utilisé.
+Il faut pour cela éditer le paramètre <b><code>Mode</code></b> du <b><code>Volume</code></b> :
+<figure><img src="/images/UnityVolumeModeSetting.png#center"/>
+</figure>
+</p>
+<p>Une fois le <b><code>Volume</code></b> en mode <b><code>Local</code></b>, il faut lui attacher un <b><code>Collider</code></b> :
+<figure><img src="/images/UnityVolumeAddCollider.png#center"/>
+</figure>
+
+Maintenant, quand la caméra entrera dans l&rsquo;espace défini par ce <b><code>Collider</code></b>, les effets de <b><code>Post-Processing</code></b> seront appliqués.</p>
+<h2 id="slides">
+  Slides
+  <a class="anchor" href="#slides">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src=https://unity3d.ch/Slides/Chap6_Post-processing.html frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 id="références">
+  Références
+  <a class="anchor" href="#r%c3%a9f%c3%a9rences">#</a>
+</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@10.2/manual/integration-with-post-processing.html">Post-processing in the Universal Render Pipeline, Unity</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+
+
+
+  
+  
+  
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>March 09, 2022<br>Benoit Le Callennec<br>7538255</p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; HE-Arc 2020-2022 - Tous droits réservés.</footer>
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

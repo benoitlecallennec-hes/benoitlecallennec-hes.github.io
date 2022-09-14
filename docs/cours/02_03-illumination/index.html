@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapitre 2.3 : illumination#Afin de voir une scène 3D et les objets qui la composent, il faut rajouter des lumières et les effets associés (ombres, brouillard, réflexions, etc).
+Il existe 3 classes de lumières :
+temps-réelles : elles sont calculées à l&rsquo;exécution par Unity. Par conséquent, elles utilisent des techniques peu gourmandes en calculs. Ces lumières sont appropriées lorsque les objets de la scène sont dynamiques (changent à l&rsquo;exécution); pré-calculées : on parle de Baked Lights.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Chapitre 2.3 : illumination" />
+<meta property="og:description" content="Chapitre 2.3 : illumination#Afin de voir une scène 3D et les objets qui la composent, il faut rajouter des lumières et les effets associés (ombres, brouillard, réflexions, etc).
+Il existe 3 classes de lumières :
+temps-réelles : elles sont calculées à l&rsquo;exécution par Unity. Par conséquent, elles utilisent des techniques peu gourmandes en calculs. Ces lumières sont appropriées lorsque les objets de la scène sont dynamiques (changent à l&rsquo;exécution); pré-calculées : on parle de Baked Lights." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dev7629.dgs5n5xung966.amplifyapp.com/docs/cours/02_03-illumination/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2022-01-19T23:04:03+01:00" />
+
+<title>Chapitre 2.3 : illumination | HE-Arc | 3252.1 Introduction à Unity</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.dd45bb2be06d3824619a5d51f47bdf55c0288dbd629dfa4d140f41732aab37ff.js" integrity="sha256-3UW7K&#43;BtOCRhml1R9HvfVcAojb1infpNFA9BcyqrN/8="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-183976366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>HE-Arc | 3252.1 Introduction à Unity</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/00-introduction/" class="">Chapitre 0 : introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_01-prise-en-main/" class="">Chapitre 1.1 : prise en main</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_02-gameobjects-components-et-transforms/" class="">Chapitre 1.2 : GameObjects, Components et Transforms</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_03-prefabs-et-assets/" class="">Chapitre 1.3 : Prefabs et Assets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_01-cameras/" class="">Chapitre 2.1 : caméras</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_02-materiaux/" class="">Chapitre 2.2 : matériaux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_03-illumination/" class="active">Chapitre 2.3 : illumination</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/03-scripting/" class="">Chapitre 3 : scripting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/04_01-animation-de-personnages-3d/" class="">Chapitre 4.1 : animation de personnages 3D</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/05-illumination-globale/" class="">Chapitre 5 : illumination globale</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/06-post-processing/" class="">Chapitre 6 : post-processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/07-shadergraph/" class="">Chapitre 7 : Shader Graph</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Articles
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Chapitre 2.3 : illumination</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#light-component">Light Component</a>
+      <ul>
+        <li><a href="#culling-mask">Culling Mask</a></li>
+      </ul>
+    </li>
+    <li><a href="#lumière-environnementale">Lumière environnementale</a>
+      <ul>
+        <li><a href="#skybox">Skybox</a></li>
+        <li><a href="#lumière-ambiante">Lumière ambiante</a></li>
+        <li><a href="#brouillard">Brouillard</a></li>
+      </ul>
+    </li>
+    <li><a href="#ombres">Ombres</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapitre-23--illumination">
+  Chapitre 2.3 : illumination
+  <a class="anchor" href="#chapitre-23--illumination">#</a>
+</h1>
+<p>Afin de voir une scène 3D et les objets qui la composent, il faut rajouter des lumières et les effets associés (ombres, brouillard, réflexions, etc).</p>
+<p>Il existe 3 classes de lumières :</p>
+<ul>
+<li><strong>temps-réelles :</strong> elles sont calculées à l&rsquo;exécution par Unity. Par conséquent, elles utilisent des techniques peu gourmandes en calculs.
+Ces lumières sont appropriées lorsque les objets de la scène sont dynamiques (changent à l&rsquo;exécution);</li>
+<li><strong>pré-calculées :</strong> on parle de <b><code>Baked Lights</code></b>.
+Ici, l&rsquo;illumination est calculée avant l&rsquo;exécution.
+Les résultats sont dans un premier stockés dans des <b><code>Lightmaps</code></b>, puis réutilisés en temps-réel.
+Les techniques utilisées sont plus complexes mais donnent des résultats plus réalistes.
+Ces lumières sont appropriées pour des scènes statiques c&rsquo;est-à-dire qui ne changent pas à l&rsquo;exécution;</li>
+<li><strong>hybrides :</strong> enfin, il est possible de mélanger les 2 types de lumières selon les objets 3D considérés.</li>
+</ul>
+<p>Ce chapitre se focalise uniquement sur les lumières temps-réelles.
+Les techniques plus avancées permettant de faire des rendus photoréalistes seront abordées dans le chapitre dédié à l&rsquo;<a href="../05-illumination-globale">illumination globale</a>.</p>
+<h2 id="light-component">
+  Light Component
+  <a class="anchor" href="#light-component">#</a>
+</h2>
+<p>Dans Unity, les <b><code>Lights</code></b><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> sont composées et représentées de la manière suivante :
+<figure><img src="/images/UnityLight.png#center"/>
+</figure>
+
+En particulier, on remarque :</p>
+<ul>
+<li>le <b><code>Gizmo</code></b> de la <b><code>Light</code></b> et son icône associée dans la scène 3D;</li>
+<li>le <b><code>Light Component</code></b> avec les paramètres des lumières.</li>
+</ul>
+<p>Il faut noter qu&rsquo;une <b><code>Light</code></b> est un <b><code>GameObject</code></b>, et donc contient aussi un <b><code>Transform</code></b>.</p>
+<p>Pour créer une <b><code>Light</code></b>, il faut aller dans le menu <code>GameObject &gt; Light</code> et choisir le type de lumière désiré, comme indiqué sur la figure suivante :
+<figure><img src="/images/UnityCreateLight.png#center"/>
+</figure>
+
+Les <b><code>Lights</code></b> peuvent être de 4 types :</p>
+<ul>
+<li><em><strong>Directional :</strong></em> ici, seule l&rsquo;orientation est importante;</li>
+<li><em><strong>Point :</strong></em> pour ce type de lumières, seule la position a une incidence sur l&rsquo;illumination;</li>
+<li><em><strong>Spot :</strong></em> dans ce cas, modifier la position ou l&rsquo;orientation de la lumière modifie aussi l&rsquo;illumination;</li>
+<li><em><strong>Area :</strong></em> ce type de lumières est particulier car c&rsquo;est toute la surface qui a son importance. Ces lumières sont plus complexes à calculer et sont forcément <em><strong>Baked</strong></em> et non <em><strong>Realtime</strong></em>.</li>
+</ul>
+<p>Les principaux paramètres des <b><code>Lights</code></b> sont modifiables facilement grâce au <b><code>Light Explorer</code></b> atteignable par le menu <code>Window &gt; Rendering &gt; Light Explorer</code>.
+La figure suivante en donne un aperçu :
+<figure><img src="/images/UnityLightExplorer.png#center"/>
+</figure>
+</p>
+<h3 id="culling-mask">
+  Culling Mask
+  <a class="anchor" href="#culling-mask">#</a>
+</h3>
+<p>De manière similaire aux <b><code>Cameras</code></b>, le paramètre <b><code>Culling Mask</code></b> permet de spécifier quels groupes d&rsquo;objets 3D doivent être considérés (rendus) par la <b><code>Light</code></b>.
+<figure><img src="/images/UnityLightCullingMask.png#center"/>
+</figure>
+</p>
+<p>Les figures suivantes montrent la différence entre une lumière qui considère tous les objets 3D de la scène, et une lumière que ne considèrent qu&rsquo;un sous-ensemble de ces objets.
+<div class="book-columns flex flex-wrap">
+  
+  <div class="flex-even markdown-inner">
+    <p><strong>Tous les objets 3D</strong></p>
+<figure><img src="/images/UnityLightCullingMaskWith.png#center"/>
+</figure>
+
+  </div>
+  
+  <div class="flex-even markdown-inner">
+    <p><strong>Seulement les objets 3D sélectionnés</strong></p>
+<figure><img src="/images/UnityLightCullingMaskWithout.png#center"/>
+</figure>
+
+  </div>
+  
+</div>
+</p>
+<h2 id="lumière-environnementale">
+  Lumière environnementale
+  <a class="anchor" href="#lumi%c3%a8re-environnementale">#</a>
+</h2>
+<p>En plus des <b><code>Light Components</code></b>, l&rsquo;environnement participe aussi à l&rsquo;illumination et a un impact sur l&rsquo;aspect final de la scène 3D.
+La fenêtre de configuration pour les différents paramètres de lumière environnementale est appelée la <b><code>Lighting window</code></b><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> et est accessible dans le menu <code>Window &gt; Rendering &gt; Lighting</code> comme indiqué sur la figure suivante :
+<figure><img src="/images/UnityLightingWindowMenu.png#center"/>
+</figure>
+</p>
+<p>On obtient alors une fenêtre contenant les onglets <b><code>Scene</code></b>, <b><code>Environment</code></b> et <b><code>Baked Lightmaps</code></b>.
+En sélectionnant l&rsquo;onglet <b><code>Environment</code></b>, la fenêtre affiche quelque chose de similaire à ce qui suit :
+<figure><img src="/images/UnityLightingWindow.png#center"/>
+</figure>
+
+Il y a en particulier plusieurs sections que nous détaillons dans la suite :</p>
+<ol>
+<li>les <b><code>Skybox</code></b>;</li>
+<li>La lumière ambiante;</li>
+<li>les réflexions associées à l&rsquo;environnement;</li>
+<li>et le brouillard dans la scène 3D.</li>
+</ol>
+<p>Les sous-sections suivantes introduisent ces notions à l&rsquo;exception des réflexions qui sont, quant à elles, abordées dans un chapitre dédié.</p>
+<h3 id="skybox">
+  Skybox
+  <a class="anchor" href="#skybox">#</a>
+</h3>
+<p>Une <b><code>Skybox</code></b> représente ce qui est visible à l&rsquo;arrière-plan, quand il n&rsquo;y a aucun objet 3D pour obstruer la vue.</p>
+<blockquote class="book-hint warning">
+  <strong>URP vs HDRP</strong><br>
+Le système de <b><code>Skybox</code></b> est différent selon qu&rsquo;on utilise URP ou HDRP.
+Dans ce cours, nous nous focalisons sur URP.
+</blockquote>
+
+<p>Dans Unity, une <b><code>Skybox</code></b> est en fait un <b><code>Material</code></b> avec un <b><code>Shader</code></b> de type <b><code>Skybox</code></b>.
+Une fois créée, cette <b><code>Skybox</code></b> peut être soit globale (donc partagée par tous les objets), ou locale pour chaque caméra.
+Si elle est globale, alors on peut rajouter le <b><code>Material</code></b> dans le paramètre <b><code>Skybox Material</code></b> de la fenêtre <b><code>Lighting window</code></b>.
+Si elle est locale à une caméra, alors il faut dans un premier temps rajouter un <b><code>Component</code></b> de type <b><code>Skybox</code></b> à la caméra, puis y associer la <b><code>Skybox</code></b>.</p>
+<h3 id="lumière-ambiante">
+  Lumière ambiante
+  <a class="anchor" href="#lumi%c3%a8re-ambiante">#</a>
+</h3>
+<p>La lumière ambiante (<b><code>Ambient Light</code></b>) est une lumière diffuse, qui vient de toutes les directions à la fois.
+Elle est très utile car Les techniques de rendus actuelles &ldquo;perdent&rdquo; en général un peu de lumière par rapport à la réalité.
+La lumière ambiante est donc une technique simple pour &ldquo;rehausser&rdquo; artificiellement le niveau de lumière dans la scène.
+Cette lumière permet aussi de rajouter des ambiances particulières en fonction de la teinte utilisée.</p>
+<h3 id="brouillard">
+  Brouillard
+  <a class="anchor" href="#brouillard">#</a>
+</h3>
+<p>Le brouillard (<b><code>Fog</code></b>) dans une scène 3D offre plusieurs avantages :</p>
+<ul>
+<li>il permet de cacher les éléments éloignés de la caméra, et donc d&rsquo;éviter les effets de <b><code>clipping</code></b> (lorsqu&rsquo;un objet dépasse soudainement le <b><code>far clipping plane</code></b>);</li>
+<li>il permet de mettre en évidence les objets qui sont aux premier-plan, par rapport aux éléments plus éloignés de la caméra.</li>
+</ul>
+<h2 id="ombres">
+  Ombres
+  <a class="anchor" href="#ombres">#</a>
+</h2>
+<p>Les ombres sont un élément essentiel de toute scène 3D.
+Ce sont elles qui donnent l&rsquo;information de profondeur.
+En particulier, sans les ombres nous avons souvent l&rsquo;impression que les objets flottent au lieu d&rsquo;être posés sur une surface.
+La technique principale pour calculer les ombres est appelée <b><code>Shadow Mapping</code></b>
+Elle consiste à faire un pseudo-rendu de la scène en positionnant la caméra sur chacune des lumières.
+Ainsi, on peut calculer toutes les surfaces vues (et donc éclairées) pour chaque lumière.
+Le résultat de ce calcul correspond en fait à la <b><code>Depth Map</code></b> calculée durant le rendu.
+Dans le cas du calcul d&rsquo;ombres, on parle plutôt de <b><code>Shadow Map</code></b>.
+Dans un deuxième temps, grâce aux différentes <b><code>Shadow Maps</code></b> calculées, on peut rapidement déduire les parties ombragées, et ceci pour chaque lumière.</p>
+<p>Les ombres sont configurables de 3 manières différentes :</p>
+<ol>
+<li>les paramètres de qualité des ombres. Ils sont globaux et appliqués à toute la scène;</li>
+<li>les paramètres liés à chaque objet;</li>
+<li>et enfin les paramètre liés à chaque lumière.</li>
+</ol>
+<p>Les paramètres de qualité des ombres sont stockés dans des <b><code>Assets</code></b>.
+En allant dans le répertoire <code>Assets</code>, on peut trouver plusieurs <b><code>Assets</code></b> contenant les paramètres de qualité pour le rendu.
+En particulier, en sélectionnant <b><code>Universal Render Pipeline</code></b> (le nom peut varier), la section concernant les ombres ressemble à la figure qui suit :
+<figure><img src="/images/UnityURPShadowSettings.png#center"/>
+</figure>
+</p>
+<p>En sélectionnant le <b><code>GameObject</code></b> qui nous intéresse, alors on peut consulter le <b><code>Mesh renderer</code></b> associé.
+En particulier, il contient les paramètres pour définir les ombres spécifiquement à ce <b><code>GameObject</code></b> comme indiqué sur la figure qui suit :
+<figure><img src="/images/UnityMeshRendererComponent.png#center"/>
+</figure>
+</p>
+<p>Enfin, on peut configurer les ombres projetées pour chaque lumière.
+Pour ce faire, il faut aller dans le <b><code>Light Component</code></b> et modifier les paramètres présents :
+<figure><img src="/images/UnityLightComponentShadows.png#center"/>
+</figure>
+</p>
+<h2 id="slides">
+  Slides
+  <a class="anchor" href="#slides">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src=https://unity3d.ch/Slides/Chap2_CamerasMateriauxEtIllumination.html frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 id="références">
+  Références
+  <a class="anchor" href="#r%c3%a9f%c3%a9rences">#</a>
+</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://docs.unity3d.com/Manual/class-Light.html">Lights, Unity</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://docs.unity3d.com/Manual/lighting-window.html">The Lighting window, Unity</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+
+
+
+  
+  
+  
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>January 19, 2022<br>Benoit Le Callennec<br>5a9ce00</p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; HE-Arc 2020-2022 - Tous droits réservés.</footer>
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#light-component">Light Component</a>
+      <ul>
+        <li><a href="#culling-mask">Culling Mask</a></li>
+      </ul>
+    </li>
+    <li><a href="#lumière-environnementale">Lumière environnementale</a>
+      <ul>
+        <li><a href="#skybox">Skybox</a></li>
+        <li><a href="#lumière-ambiante">Lumière ambiante</a></li>
+        <li><a href="#brouillard">Brouillard</a></li>
+      </ul>
+    </li>
+    <li><a href="#ombres">Ombres</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

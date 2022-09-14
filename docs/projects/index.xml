@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>PROJECTS on Benoit Le Callennec</title>
+    <link>https://www.lecallennec.com/docs/projects/</link>
+    <description>Recent content in PROJECTS on Benoit Le Callennec</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 13 Jul 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://www.lecallennec.com/docs/projects/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>PANTHEON</title>
+      <link>https://www.lecallennec.com/docs/projects/pantheon/</link>
+      <pubDate>Sat, 13 Jul 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lecallennec.com/docs/projects/pantheon/</guid>
+      <description>PANTHEON#Major Historical Figures Summarized into Small &amp;amp; Fun to Play Cards for Children#ABSTRACT#We present PANTHEON: a game summarizing major historical figures biography into small, fun and tangible playing cards. The objective is twofold:
+Keeping children away from screens by offering a fun card game. Stimulating their curiosity by letting them read short biographies of important historical figures with a major impact (good or bad).</description>
+    </item>
+    
+    <item>
+      <title>Mosketch</title>
+      <link>https://www.lecallennec.com/docs/projects/mosketch/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lecallennec.com/docs/projects/mosketch/</guid>
+      <description>Mosketch#Quick and easy 3D character animation#ABSTRACT#Mosketch® is a 3D animation software that allows artists to animate any 3D characters by the stroke of a pen. It is intuitive and cuts production times by 4 on average. With Mosketch, users can animate any 3D character using joints only. Complex control rigs are not needed anymore! Sketch on your 3D character joints to quickly design key poses.</description>
+    </item>
+    
+    <item>
+      <title>Ski Jumping</title>
+      <link>https://www.lecallennec.com/docs/projects/skijumping/</link>
+      <pubDate>Tue, 01 Jan 2008 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lecallennec.com/docs/projects/skijumping/</guid>
+      <description>Ski Jumping#Motion Analysis using Interial Sensors#PUBLICATIONS#J. Chardonnens, J. Favre, B. Le Callennec, F. Cuendet, G. Gremion and K. Aminian. Automatic measurement of key ski jumping phases and temporal events with a wearable system. Journal of Sports Sciences, 30(1):53-61, 2012.
+B. Le Callennec, B. Jolles, G. Gremion, F. Cuendet, and K. Aminian. Automatic Detection of Key Events During the Takeoff Phase of Ski Jumps Using Body Fixed Sensors.</description>
+    </item>
+    
+    <item>
+      <title>Interactive Motion Editing</title>
+      <link>https://www.lecallennec.com/docs/projects/motionediting/</link>
+      <pubDate>Wed, 01 Mar 2006 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lecallennec.com/docs/projects/motionediting/</guid>
+      <description>Interactive Techniques For Motion Deformation Of Articulated Figures Using Prioritized Constraints.</description>
+    </item>
+    
+  </channel>
+</rss>

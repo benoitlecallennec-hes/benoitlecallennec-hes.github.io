@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapitre 2.2 : matériaux#Les Materials1 définissent l&rsquo;aspect visuel des GameObjects dans Unity. Ils contiennent donc les informations nécessaires pour calculer les rendus.
+Un Material contient les éléments suivants : un Shader qui est chargé de faire les calculs pour le rendu à proprement parler. Nous verrons les Shaders dans un chapitre dédié au Shader Graph; des Textures2 qui représentent les données dont le Shader a besoin pour le rendu; des paramètres qui sont injectés au Shader pour contrôler le rendu.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Chapitre 2.2 : matériaux" />
+<meta property="og:description" content="Chapitre 2.2 : matériaux#Les Materials1 définissent l&rsquo;aspect visuel des GameObjects dans Unity. Ils contiennent donc les informations nécessaires pour calculer les rendus.
+Un Material contient les éléments suivants : un Shader qui est chargé de faire les calculs pour le rendu à proprement parler. Nous verrons les Shaders dans un chapitre dédié au Shader Graph; des Textures2 qui représentent les données dont le Shader a besoin pour le rendu; des paramètres qui sont injectés au Shader pour contrôler le rendu." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dev7629.dgs5n5xung966.amplifyapp.com/docs/cours/02_02-materiaux/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2022-01-19T23:04:03+01:00" />
+
+<title>Chapitre 2.2 : matériaux | HE-Arc | 3252.1 Introduction à Unity</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.dd45bb2be06d3824619a5d51f47bdf55c0288dbd629dfa4d140f41732aab37ff.js" integrity="sha256-3UW7K&#43;BtOCRhml1R9HvfVcAojb1infpNFA9BcyqrN/8="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-183976366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>HE-Arc | 3252.1 Introduction à Unity</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/00-introduction/" class="">Chapitre 0 : introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_01-prise-en-main/" class="">Chapitre 1.1 : prise en main</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_02-gameobjects-components-et-transforms/" class="">Chapitre 1.2 : GameObjects, Components et Transforms</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_03-prefabs-et-assets/" class="">Chapitre 1.3 : Prefabs et Assets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_01-cameras/" class="">Chapitre 2.1 : caméras</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_02-materiaux/" class="active">Chapitre 2.2 : matériaux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_03-illumination/" class="">Chapitre 2.3 : illumination</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/03-scripting/" class="">Chapitre 3 : scripting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/04_01-animation-de-personnages-3d/" class="">Chapitre 4.1 : animation de personnages 3D</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/05-illumination-globale/" class="">Chapitre 5 : illumination globale</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/06-post-processing/" class="">Chapitre 6 : post-processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/07-shadergraph/" class="">Chapitre 7 : Shader Graph</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Articles
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Chapitre 2.2 : matériaux</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapitre-22--matériaux">
+  Chapitre 2.2 : matériaux
+  <a class="anchor" href="#chapitre-22--mat%c3%a9riaux">#</a>
+</h1>
+<p>Les <b><code>Materials</code></b><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> définissent l&rsquo;aspect visuel des <b><code>GameObjects</code></b> dans Unity.
+Ils contiennent donc les informations nécessaires pour calculer les rendus.</p>
+<p>Un <b><code>Material</code></b> contient les éléments suivants :
+<figure><img src="/images/UnityMaterial.png#center"/>
+</figure>
+</p>
+<ol>
+<li>un <b><code>Shader</code></b> qui est chargé de faire les calculs pour le rendu à proprement parler. Nous verrons les <b><code>Shaders</code></b> dans un chapitre dédié au <a href="../07-shadergraph"><b><code>Shader Graph</code></b></a>;</li>
+<li>des <b><code>Textures</code></b><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> qui représentent les données dont le <b><code>Shader</code></b> a besoin pour le rendu;</li>
+<li>des paramètres qui sont injectés au <b><code>Shader</code></b> pour contrôler le rendu.</li>
+</ol>
+<p>Il existe déjà beaucoup de <b><code>Shaders</code></b> et de <b><code>Materials</code></b> livrés avec Unity ou disponible directement sur l&rsquo;<b><code>Asset</code></b><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> de Unity.</p>
+<blockquote class="book-hint warning">
+  <strong>In-Editor Asset Store Unity 2020.1</strong><br>
+Contrairement à ce qui est indiqué dans la documentation, l&rsquo;<b><code>Asset Store</code></b> n&rsquo;est plus disponible dans l&rsquo;éditeur Unity depuis la version 2020.1.
+Il faut passer par le site web directement.
+</blockquote>
+
+<p>Dans Unity, il existe plusieurs <a href="https://dev7629.dgs5n5xung966.amplifyapp.com/posts/les-pipelines-de-rendu-dans-unity/"><b><code>Render Pipelines</code></b></a>.
+Dans le cadre de ce cours, nous utiliserons le <b><code>Universal Render Pipeline</code></b> (URP).
+Il faut donc faire attention de créer et d&rsquo;utiliser des <b><code>Shaders</code></b> et des <b><code>Materials</code></b> compatibles.</p>
+<p>Il existe plusieurs <b><code>Shaders</code></b> disponibles avec URP<sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.
+En particulier, le <b><code>Lit Shader</code></b><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> offre beaucoup de possibilités et permet très souvent d&rsquo;obtenir les résultats souhaités.
+Dans les cas où le rendu final n&rsquo;a pas besoin d&rsquo;être proche de la réalité, ou sur des architectures limitées en puissance, alors le  <b><code>Simple Lit Shader</code></b><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> est approprié.</p>
+<p>Les figures suivantes montrent un exemple de <b><code>Material</code></b> utilisant le <b><code>Lit Shader</code></b> (à gauche), et le <b><code>Simple Lit Shader</code></b> (à droite ) :</p>
+<div class="book-columns flex flex-wrap">
+  
+  <div class="flex-even markdown-inner">
+    <figure><img src="/images/UnityURPLitShader.png#center"/>
+</figure>
+
+  </div>
+  
+  <div class="flex-even markdown-inner">
+    <figure><img src="/images/UnityURPSimpleLitShader.png#center"/>
+</figure>
+
+  </div>
+  
+</div>
+
+<p>Les <b><code>Materials</code></b> sont des <b><code>Assets</code></b> qui pourront être appliqués à plusieurs <b><code>GameObjects</code></b> différents à la fois.
+Pour les créer, il faut donc aller dans le menu <code>Assets/Create/Material</code> et choisir le <b><code>Shader</code></b> désiré.
+Il ne reste plus qu&rsquo;à l&rsquo;appliquer aux {&lt;unity_keyword <code>GameObjects</code> &gt;}} désirés.
+Pour ce faire, on peut :</p>
+<ul>
+<li>éditer le <b><code>Mesh Renderer Component</code></b>;</li>
+<li>tout simplement faire un drag-and-drop sur l&rsquo;objet 3D dans la scène.</li>
+</ul>
+<h2 id="slides">
+  Slides
+  <a class="anchor" href="#slides">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src=https://unity3d.ch/Slides/Chap2_CamerasMateriauxEtIllumination.html frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 id="références">
+  Références
+  <a class="anchor" href="#r%c3%a9f%c3%a9rences">#</a>
+</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://docs.unity3d.com/Manual/Materials.html">Creating and Using Materials, Unity</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://docs.unity3d.com/Manual/Textures.html">Textures, Unity</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://docs.unity3d.com/Manual/AssetStore.html">Using the Asset Store, Unity</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.1/manual/shaders-in-universalrp.html">Shaders and Materials, Unity</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.1/manual/lit-shader.html">Lit Shader, Unity</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://docs.unity3d.com/Packages/com.unity.render-pipelines.universal@7.1/manual/simple-lit-shader.html">Simple Lit Shader, Unity</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+
+
+
+  
+  
+  
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>January 19, 2022<br>Benoit Le Callennec<br>5a9ce00</p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; HE-Arc 2020-2022 - Tous droits réservés.</footer>
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

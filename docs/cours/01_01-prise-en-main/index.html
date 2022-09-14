@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapitre 1.1 : prise en main#Dans ce chapitre, nous considérons qu&rsquo;un projet utilisant le pipeline de rendu Universal Render Pipeline1 est déjà créé : Pour des raisons pratiques, nous utilisons directement le template fourni par Unity. Cependant, il est en général conseillé de commencer avec URP en utilisant un projet vide.
+Interface Générale#Lorsque vous démarrez votre projet pour la première fois, vous avez une fenêtre qui ressemble à ce qui suit : Dans les sections qui suivent, nous passons en revue les principales fenêtres de Unity.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Chapitre 1.1 : prise en main" />
+<meta property="og:description" content="Chapitre 1.1 : prise en main#Dans ce chapitre, nous considérons qu&rsquo;un projet utilisant le pipeline de rendu Universal Render Pipeline1 est déjà créé : Pour des raisons pratiques, nous utilisons directement le template fourni par Unity. Cependant, il est en général conseillé de commencer avec URP en utilisant un projet vide.
+Interface Générale#Lorsque vous démarrez votre projet pour la première fois, vous avez une fenêtre qui ressemble à ce qui suit : Dans les sections qui suivent, nous passons en revue les principales fenêtres de Unity." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dev7629.dgs5n5xung966.amplifyapp.com/docs/cours/01_01-prise-en-main/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2022-01-19T22:58:38+01:00" />
+
+<title>Chapitre 1.1 : prise en main | HE-Arc | 3252.1 Introduction à Unity</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.dd45bb2be06d3824619a5d51f47bdf55c0288dbd629dfa4d140f41732aab37ff.js" integrity="sha256-3UW7K&#43;BtOCRhml1R9HvfVcAojb1infpNFA9BcyqrN/8="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-183976366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>HE-Arc | 3252.1 Introduction à Unity</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/00-introduction/" class="">Chapitre 0 : introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_01-prise-en-main/" class="active">Chapitre 1.1 : prise en main</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_02-gameobjects-components-et-transforms/" class="">Chapitre 1.2 : GameObjects, Components et Transforms</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_03-prefabs-et-assets/" class="">Chapitre 1.3 : Prefabs et Assets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_01-cameras/" class="">Chapitre 2.1 : caméras</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_02-materiaux/" class="">Chapitre 2.2 : matériaux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_03-illumination/" class="">Chapitre 2.3 : illumination</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/03-scripting/" class="">Chapitre 3 : scripting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/04_01-animation-de-personnages-3d/" class="">Chapitre 4.1 : animation de personnages 3D</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/05-illumination-globale/" class="">Chapitre 5 : illumination globale</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/06-post-processing/" class="">Chapitre 6 : post-processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/07-shadergraph/" class="">Chapitre 7 : Shader Graph</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Articles
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Chapitre 1.1 : prise en main</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#interface-générale">Interface Générale</a></li>
+    <li><a href="#project-window">Project Window</a></li>
+    <li><a href="#scene-view">Scene View</a></li>
+    <li><a href="#game-view">Game View</a></li>
+    <li><a href="#hierarchy-window">Hierarchy Window</a></li>
+    <li><a href="#inspector-window">Inspector Window</a></li>
+    <li><a href="#toolbar">Toolbar</a></li>
+    <li><a href="#build--run">Build &amp; Run</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapitre-11--prise-en-main">
+  Chapitre 1.1 : prise en main
+  <a class="anchor" href="#chapitre-11--prise-en-main">#</a>
+</h1>
+<p>Dans ce chapitre, nous considérons qu&rsquo;un projet utilisant le pipeline de rendu <em><strong>Universal Render Pipeline</strong></em><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> est déjà créé :
+<figure><img src="/images/UnityHub3BetaCreateProject.png#center" width="100%"/>
+</figure>
+</p>
+<p>Pour des raisons pratiques, nous utilisons directement le template fourni par Unity.
+Cependant, il est en général conseillé de <a href="https://dev7629.dgs5n5xung966.amplifyapp.com/posts/commencer-avec-urp/">commencer avec <em><strong>URP</strong></em></a> en utilisant un projet vide.</p>
+<h2 id="interface-générale">
+  Interface Générale
+  <a class="anchor" href="#interface-g%c3%a9n%c3%a9rale">#</a>
+</h2>
+<p>Lorsque vous démarrez votre projet pour la première fois, vous avez une fenêtre qui ressemble à ce qui suit :
+<figure><img src="/images/UnityInterfaceGeneral.png#center" width="100%"/>
+</figure>
+</p>
+<p>Dans les sections qui suivent, nous passons en revue les principales fenêtres de Unity.</p>
+<h2 id="project-window">
+  Project Window
+  <a class="anchor" href="#project-window">#</a>
+</h2>
+<p>La fenêtre <em><strong>Project</strong></em><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup> ressemble à ceci :
+<figure><img src="/images/UnityInterfaceProjectWindow.png#center" width="100%"/>
+</figure>
+
+Elle rassemble tout le contenu à votre disposition pour ce projet : on parle d&rsquo;<em><strong>Assets</strong></em>.
+Un <em><strong>Asset</strong></em> peut être toute donnée (en général un fichier) utilisable dans votre projet (images, modèles 3D, animations, etc.).
+Il existe déjà beaucoup d&rsquo;<em><strong>Assets</strong></em> disponibles dans Unity ou sur l&rsquo;<em><strong>Asset Store</strong></em>.
+Ces <em><strong>Assets</strong></em> sont organisés grâce à une hiérarchie de répertoires pour un accès facilité.</p>
+<h2 id="scene-view">
+  Scene View
+  <a class="anchor" href="#scene-view">#</a>
+</h2>
+<p>La <em><strong>Scene View</strong></em> est une vue <strong>interactive</strong> <sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup> et ressemble à ceci :
+<figure><img src="/images/UnityInterfaceSceneWindow.png#center" width="100%"/>
+</figure>
+</p>
+<p>Les principales commandes pour la navigation sont :</p>
+<ul>
+<li><code>alt</code> + bouton gauche | milieu | droit de la souris ainsi que la roulette pour naviguer en 3D;</li>
+<li><code>F</code> pour centrer la caméra sur l&rsquo;objet sélectionné;</li>
+<li><code>Shift + F</code> pour verrouiller la vue sur l&rsquo;objet sélectionné.</li>
+</ul>
+<p>Il existe beaucoup d&rsquo;autres options consultables directement dans la documentation <sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
+<p>Quand on parle de 3D, un <em><strong>gizmo</strong></em> permet de modifier l&rsquo;orientation, la position et parfois les échelles de l&rsquo;objet auquel il est attaché.
+En particulier, le <em><strong>scene gizmo</strong></em> permet de manipuler la caméra courante :
+<figure><img src="/images/UnitySceneGizmo.png"/>
+</figure>
+
+En faisant un clic droit sur le <em><strong>scene gizmo</strong></em>, on peut afficher les vues prédéfinies disponibles pour la caméra courante :
+<figure><img src="/images/UnityPredefinedViews.png"/>
+</figure>
+
+Il est enfin possible de bloquer l&rsquo;orientation et la perspective de la caméra courante en cliquant sur le cadenas en haut à droite du <em><strong>scene gizmo</strong></em>.</p>
+<p>Voici un exemple de navigation en 3D en utilisant les commandes précédemment présentées :
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/YdJoH3u1Od4" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h2 id="game-view">
+  Game View
+  <a class="anchor" href="#game-view">#</a>
+</h2>
+<p>La <em><strong>Game View</strong></em> est la vue finale 3D de votre application <sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> :
+<figure><img src="/images/UnityInterfaceGameWindow.png#center" width="100%"/>
+</figure>
+
+Il est possible de contrôler l&rsquo;état du jeu (<em><strong>Play</strong></em> | <em><strong>Pause</strong></em> | <em><strong>Step</strong></em>) en utilisant les boutons suivants :
+<figure><img src="/images/UnityPlaybackControls.png#center" width="40%"/>
+</figure>
+</p>
+<blockquote class="book-hint danger">
+  <strong>ATTENTION</strong><br>
+tout changement à la scène en mode <em><strong>Play</strong></em> est temporaire et sera annulé lorsque l&rsquo;on quitte l&rsquo;application.
+</blockquote>
+
+<h2 id="hierarchy-window">
+  Hierarchy Window
+  <a class="anchor" href="#hierarchy-window">#</a>
+</h2>
+<p>La fenêtre <em><strong>Hierarchy</strong></em> contient tous les <em><strong>GameObjects</strong></em> contenus dans votre application <sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> :
+<figure><img src="/images/UnityInterfaceHierarchyWindow.png#center" width="100%"/>
+</figure>
+
+Cette fenêtre organise les éléments sous forme de hiérarchie.
+Elle est très utile pour sélectionner des <em><strong>GameObjects</strong></em>, les (re)parenter et les cacher.</p>
+<h2 id="inspector-window">
+  Inspector Window
+  <a class="anchor" href="#inspector-window">#</a>
+</h2>
+<p>La fenêtre <em><strong>Inspector</strong></em> affiche les informations détaillées du <em><strong>GameObject</strong></em> sélectionné <sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> :
+<figure><img src="/images/UnityInterfaceInspectorWindow.png#center" width="100%"/>
+</figure>
+
+Elle est très utile pour voir et modifier :</p>
+<ul>
+<li>les paramètres de <em><strong>GameObjects</strong></em> et de <em><strong>Components</strong></em>;</li>
+<li>les paramètres des <em><strong>Assets</strong></em>;</li>
+<li>la façon dont les <em><strong>Assets</strong></em> sont importés dans Unity;</li>
+<li>les variables publiques (ou sérialisées) des scripts.</li>
+</ul>
+<h2 id="toolbar">
+  Toolbar
+  <a class="anchor" href="#toolbar">#</a>
+</h2>
+<p>La <em><strong>Toolbar</strong></em> rassemble plusieurs boutons pour les outils les plus utilisés <sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> :
+<figure><img src="/images/UnityInterfaceToolbar.png#center" width="100%"/>
+</figure>
+</p>
+<h2 id="build--run">
+  Build &amp; Run
+  <a class="anchor" href="#build--run">#</a>
+</h2>
+<p>Pour générer l&rsquo;exécutable final de votre application 3D, il faut aller dans le menu <code>File / Build Settings</code> (aussi atteignable avec le raccourcis <code>Ctrl + Shift + B</code>) :
+<figure><img src="/images/UnityBuildSettings.png#center" width="100%"/>
+</figure>
+</p>
+<p>On obtient une fenêtre qui ressemble à celle qui suit :
+<figure><img src="/images/UnityBuildSettingsWebGL.png#center" width="100%"/>
+</figure>
+</p>
+<blockquote class="book-hint info">
+  <strong>À NOTER</strong><br>
+Par défaut, le module permettant de générer des applications 3D en WebGL n&rsquo;est pas installé.
+Il faut donc d&rsquo;abord l&rsquo;installer depuis le <em><strong>Unity Hub</strong></em>.
+</blockquote>
+
+<p>Une fois WebGL sélectionné, il suffit de cliquer sur <code>Switch Platform</code>.
+Ensuite, il ne reste plus qu&rsquo;à cliquer sur <code>Build and Run</code>.
+Une fois l&rsquo;application générée, vous devriez obtenir quelque chose comme ce qui suit :
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/zmn5nDf2dEc" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h2 id="slides">
+  Slides
+  <a class="anchor" href="#slides">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src=https://unity3d.ch/Slides/Chap1_ConceptsFondamentaux.html frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 id="références">
+  Références
+  <a class="anchor" href="#r%c3%a9f%c3%a9rences">#</a>
+</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://dev7629.dgs5n5xung966.amplifyapp.com/posts/les-pipelines-de-rendu-dans-unity/">Les pipelines de rendu dans Unity</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://docs.unity3d.com/Manual/ProjectView.html">The Project Window, Unity</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://docs.unity3d.com/Manual/UsingTheSceneView.html">The Scene view, Unity</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://docs.unity3d.com/Manual/SceneViewNavigation.html">Scene view navigation, Unity</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://docs.unity3d.com/Manual/GameView.html">The Game view, Unity</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://docs.unity3d.com/Manual/Hierarchy.html">The Hierarchy window, Unity</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://docs.unity3d.com/Manual/UsingTheInspector.html">The Inspector window, Unity</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://docs.unity3d.com/Manual/Toolbar.html">The Toolbar, Unity</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+
+
+
+  
+  
+  
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>January 19, 2022<br>Benoit Le Callennec<br>ff2d1b0</p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; HE-Arc 2020-2022 - Tous droits réservés.</footer>
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#interface-générale">Interface Générale</a></li>
+    <li><a href="#project-window">Project Window</a></li>
+    <li><a href="#scene-view">Scene View</a></li>
+    <li><a href="#game-view">Game View</a></li>
+    <li><a href="#hierarchy-window">Hierarchy Window</a></li>
+    <li><a href="#inspector-window">Inspector Window</a></li>
+    <li><a href="#toolbar">Toolbar</a></li>
+    <li><a href="#build--run">Build &amp; Run</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

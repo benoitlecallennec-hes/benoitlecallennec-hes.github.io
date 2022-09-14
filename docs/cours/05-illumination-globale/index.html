@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapitre 5 : illumination globale#Dans ce chapitre, nous allons nous intéresser aux techniques permettant d&rsquo;améliorer le rendu final de notre scène 3D. Il est tout d&rsquo;abord important de bien faire la différence entre 2 types d&rsquo;illuminations :
+l&rsquo;illumination directe, qui s&rsquo;intéresse aux interactions directes entre les lumières et les objets; l&rsquo;illumination indirecte, qui s&rsquo;intéresse aux interactions indirectes entre les lumières et les objets. Par exemple, quand une lumière illumine un objet qui à son tour influence l&rsquo;illumination d&rsquo;un autre objet alors on parle d&rsquo;illumination indirecte.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Chapitre 5 : illumination globale" />
+<meta property="og:description" content="Chapitre 5 : illumination globale#Dans ce chapitre, nous allons nous intéresser aux techniques permettant d&rsquo;améliorer le rendu final de notre scène 3D. Il est tout d&rsquo;abord important de bien faire la différence entre 2 types d&rsquo;illuminations :
+l&rsquo;illumination directe, qui s&rsquo;intéresse aux interactions directes entre les lumières et les objets; l&rsquo;illumination indirecte, qui s&rsquo;intéresse aux interactions indirectes entre les lumières et les objets. Par exemple, quand une lumière illumine un objet qui à son tour influence l&rsquo;illumination d&rsquo;un autre objet alors on parle d&rsquo;illumination indirecte." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dev7629.dgs5n5xung966.amplifyapp.com/docs/cours/05-illumination-globale/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2022-03-09T10:45:28+01:00" />
+
+<title>Chapitre 5 : illumination globale | HE-Arc | 3252.1 Introduction à Unity</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.dd45bb2be06d3824619a5d51f47bdf55c0288dbd629dfa4d140f41732aab37ff.js" integrity="sha256-3UW7K&#43;BtOCRhml1R9HvfVcAojb1infpNFA9BcyqrN/8="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-183976366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>HE-Arc | 3252.1 Introduction à Unity</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/00-introduction/" class="">Chapitre 0 : introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_01-prise-en-main/" class="">Chapitre 1.1 : prise en main</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_02-gameobjects-components-et-transforms/" class="">Chapitre 1.2 : GameObjects, Components et Transforms</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_03-prefabs-et-assets/" class="">Chapitre 1.3 : Prefabs et Assets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_01-cameras/" class="">Chapitre 2.1 : caméras</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_02-materiaux/" class="">Chapitre 2.2 : matériaux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_03-illumination/" class="">Chapitre 2.3 : illumination</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/03-scripting/" class="">Chapitre 3 : scripting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/04_01-animation-de-personnages-3d/" class="">Chapitre 4.1 : animation de personnages 3D</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/05-illumination-globale/" class="active">Chapitre 5 : illumination globale</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/06-post-processing/" class="">Chapitre 6 : post-processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/07-shadergraph/" class="">Chapitre 7 : Shader Graph</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Articles
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Chapitre 5 : illumination globale</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lighting-settings-preview-et-final">Lighting Settings PREVIEW et FINAL</a></li>
+    <li><a href="#objets-3d-statiques">Objets 3D statiques</a></li>
+    <li><a href="#lumières-statiques-et-lumières-dynamiques">Lumières statiques et lumières dynamiques</a></li>
+    <li><a href="#occlusion-ambiante">Occlusion Ambiante</a></li>
+    <li><a href="#light-probes">Light Probes</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapitre-5--illumination-globale">
+  Chapitre 5 : illumination globale
+  <a class="anchor" href="#chapitre-5--illumination-globale">#</a>
+</h1>
+<p>Dans ce chapitre, nous allons nous intéresser aux techniques permettant d&rsquo;améliorer le rendu final de notre scène 3D.
+Il est tout d&rsquo;abord important de bien faire la différence entre 2 types d&rsquo;illuminations :</p>
+<ul>
+<li>l&rsquo;<strong>illumination directe</strong>, qui s&rsquo;intéresse aux interactions directes entre les lumières et les objets;</li>
+<li>l&rsquo;<strong>illumination indirecte</strong>, qui s&rsquo;intéresse aux interactions indirectes entre les lumières et les objets.</li>
+</ul>
+<p>Par exemple, quand une lumière illumine un objet qui à son tour influence l&rsquo;illumination d&rsquo;un autre objet alors on parle d&rsquo;<strong>illumination indirecte</strong>.</p>
+<p>L&rsquo;illumination globale est un ensemble de techniques permettant de considérer la <strong>lumière indirecte</strong> c&rsquo;est-à-dire celle qui est donc réfléchie par les différentes surfaces de la scène 3D (autres que les lumières).
+Ces algorithmes sont pour la plupart difficiles à implémenter et surtout coûteux en temps de calcul.</p>
+<p>L&rsquo;idée générale est de tirer partie des informations de la scène 3D pour effectuer (et stocker) le plus de calculs possibles (pré-calculs) relatifs à la lumière, avant de lancer l&rsquo;application.
+Ces informations précalculées sont appelées des <b><code>Lightmaps</code></b>.
+De plus, quand on précalcule on dit souvent qu&rsquo;on <b><code>Bake</code></b>.
+Ces <b><code>Lightmaps</code></b> sont ensuite réutilisées en temps-réel pour améliorer l&rsquo;illumination de la scène 3D.</p>
+<p>La figure suivante montre la différence entre une scène 3D qui ne considère que l&rsquo;illumination directe (avec des réflexions) à gauche et une scène qui prend aussi en compte l&rsquo;illumination globale :
+<div class="book-columns flex flex-wrap">
+  
+  <div class="flex-even markdown-inner">
+    <p><strong>Illumination directe</strong> (avec réflexions)</p>
+<figure><img src="/images/GI_OFF.png#center"/>
+</figure>
+
+  </div>
+  
+  <div class="flex-even markdown-inner">
+    <p><strong>Illumination globale</strong> ajoutée</p>
+<figure><img src="/images/GI_ON.png#center"/>
+</figure>
+
+  </div>
+  
+</div>
+
+On peut en particulier noter le sol vert qui &ldquo;illumine&rdquo; les murs blancs.
+On voit aussi que les intersections des murs sont plus ombragées.</p>
+<p>Il est cependant important de prendre en compte une contrainte forte : le tout doit être calculable <strong>en temps-réel</strong>, c&rsquo;est à dire au minimum 30 fois par secondes.
+Ainsi, pour qu&rsquo;une application 3D soit considérée comme temps-réelle, il faut que chaque image soit calculable en moins de 16.67ms.
+Pour comparaison, le film Coco de Pixar a demandé pour les scènes les plus complexes <a href="/posts/coco-de-pixar-quelques-chiffres/">55 heures de calcul par image</a>.
+Il est donc important de comprendre que le niveau de réalisme visé n&rsquo;est pas comparable à celui atteint pour les films (qui sont eux entièrement précalculés).</p>
+<h2 id="lighting-settings-preview-et-final">
+  Lighting Settings PREVIEW et FINAL
+  <a class="anchor" href="#lighting-settings-preview-et-final">#</a>
+</h2>
+<p>Le calcul de ces <b><code>Lightmaps</code></b> se fait dans l&rsquo;éditeur de Unity directement.
+Cependant, si les <b><code>Lightmaps</code></b> sont très détaillées, alors elles vont demander beaucoup de temps de <strong>précalcul</strong> mais donneront un résultat réaliste à l&rsquo;exécution.
+C&rsquo;est ce que nous souhaitons dans la version finale de notre application.
+Au contraire, si elles sont peu détaillées, elles seront rapides à <strong>précalculer</strong> mais donneront des résultats plus grossiers à l&rsquo;exécution.
+C&rsquo;est ce que nous souhaitons lorsque l&rsquo;on travaille encore sur l&rsquo;application et que l&rsquo;on souhaite rapidement pré-visualiser les résultats.</p>
+<p>Nous allons donc créer 2 <b><code>Lighting Settings</code></b>.
+Pour ce faire, il faut aller dans menu <code>Window &gt; Rendering &gt; Lighting</code> :
+<figure><img src="/images/UnityLightingWindowMenu.png#center"/>
+</figure>
+</p>
+<p>Ensuite, en cliquant sur le bouton <code>New Lighting Settings</code>, nous pouvons définir des valeurs de paramètres pour l&rsquo;illumination.</p>
+<p>Voici 2 exemples de configurations pour la prévisualisation et le rendu final :
+<div class="book-columns flex flex-wrap">
+  
+  <div class="flex-even markdown-inner">
+    <p><strong>Configuration pour la prévisualisation</strong></p>
+<figure><img src="/images/UnityLightingSettingsPREVIEW.png#center"/>
+</figure>
+
+  </div>
+  
+  <div class="flex-even markdown-inner">
+    <p><strong>Configuration pour le rendu final</strong></p>
+<figure><img src="/images/UnityLightingSettingsFINAL.png#center"/>
+</figure>
+
+  </div>
+  
+</div>
+
+Notez que l&rsquo;on passe de 8 secondes pour précalculer les <b><code>Lightmaps</code></b> en mode prévisualisation à plus de 5 minutes en mode rendu final.</p>
+<h2 id="objets-3d-statiques">
+  Objets 3D statiques
+  <a class="anchor" href="#objets-3d-statiques">#</a>
+</h2>
+<p>Si les objets de la scène sont mobiles (donc dynamiques), la lumière changera aussi de manière dynamique et rien (ou très peu) ne pourra être précalculé.
+Au contraire, si les objets 3D sont immobiles (statiques) dans la scène, alors on peut utiliser cette information pour précalculer leur illumination.</p>
+<p>Il faut donc marquer les objets immobiles comme <b><code>static</code></b> dans Unity pour qu&rsquo;ils soient pris en compte dans le calcul de l&rsquo;illumination globale :
+<figure><img src="/images/UnityInspectorStatic.png#center"/>
+</figure>
+</p>
+<h2 id="lumières-statiques-et-lumières-dynamiques">
+  Lumières statiques et lumières dynamiques
+  <a class="anchor" href="#lumi%c3%a8res-statiques-et-lumi%c3%a8res-dynamiques">#</a>
+</h2>
+<p>De la même manière que pour les objets 3D, les lumières peuvent être statiques, ou dynamiques.
+Dans Unity, les <b><code>Lights</code></b> peuvent en effet avoir 3 modes <sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>:</p>
+<ul>
+<li><b><code>Realtime</code></b> (dynamique) : cette <b><code>Light</code></b> est calculée en temps-réel uniquement et ne contribue pas à l&rsquo;illumination globale;</li>
+<li><b><code>Baked</code></b> (statique) : cette <b><code>Light</code></b> n&rsquo;est <strong>pas</strong> calculée en temps-réel.
+Cependant, elle est prise en compte dans le calcul de l&rsquo;illumination globale;
+-<b><code>Mixed</code></b> (mixée) : cette <b><code>Light</code></b> est calculée en temps-réel <strong>et</strong> est prise en compte dans le calcul de l&rsquo;illumination globale.</li>
+</ul>
+<p>Pour chaque <b><code>Light</code></b>, il faut ajuster son mode en fonction des effets désirés :
+<figure><img src="/images/UnityLightBaked.png#center"/>
+</figure>
+</p>
+<h2 id="occlusion-ambiante">
+  Occlusion Ambiante
+  <a class="anchor" href="#occlusion-ambiante">#</a>
+</h2>
+<p>L&rsquo;occlusion ambiante (ou <b><code>Ambient Occlusion</code></b>) dans Unity permet de simuler l&rsquo;impact sur l&rsquo;illumination qu&rsquo;ont des surfaces voisines.
+Par exemple, 2 surfaces à angle droit auront tendance un atténuer la lumière arrivant à la jonction.
+L&rsquo;<b><code>Ambient Occlusion</code></b> peut être précalculée en modifiant les paramètres suivants :
+<figure><img src="/images/UnityLightingSettingsAO.png#center"/>
+</figure>
+</p>
+<p>Il faut noter qu&rsquo;il est possible d&rsquo;estimer l&rsquo;<b><code>Ambient Occlusion</code></b> lors de la phase de post-processing, donc en temps-réel.
+Ce sujet n&rsquo;est pas couvert dans ce chapitre.</p>
+<h2 id="light-probes">
+  Light Probes
+  <a class="anchor" href="#light-probes">#</a>
+</h2>
+<p>L&rsquo;illumination globale ne concerne que les objets statiques ainsi que les <b><code>Lights</code></b> dont le mode est <b><code>Baked</code></b> ou <b><code>Mixed</code></b>.
+Dans ces conditions, un objet dynamique ne peut pas être influencé par l&rsquo;illumination globale.
+Il existe cependant une alternative : précalculer les informations relatives à l&rsquo;illumination globale à certains points dans la scène 3D.
+Puis réutiliser ces informations en temps-réel pour illuminer les objets dynamiques.
+Pour ce faire, il faut créer des <b><code>Light Probes Group</code></b> :
+<figure><img src="/images/UnityLightProbeGroupMenu.png#center"/>
+</figure>
+</p>
+<p>Le <b><code>Light Probes Group</code></b> ainsi créé ressemble à ce qui suit dans l&rsquo;<b><code>Inspector</code></b> :
+<figure><img src="/images/UnityLightProbeGroupComponent.png#center"/>
+</figure>
+</p>
+<p>Il est enfin nécessaire de modifier chaque <b><code>Light Probe</code></b> individuellement pour les placer aux endroits nécessaires.
+Pour activer le mode d&rsquo;édition, il faut d&rsquo;abord cliquer sur le bouton <code>Edit Light Probes</code>.</p>
+<h2 id="slides">
+  Slides
+  <a class="anchor" href="#slides">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src=https://unity3d.ch/Slides/Chap5_IlluminationGlobale frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 id="références">
+  Références
+  <a class="anchor" href="#r%c3%a9f%c3%a9rences">#</a>
+</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://docs.unity3d.com/Manual/LightModes.html">Light Mode, Unity</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+
+
+
+  
+  
+  
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>March 09, 2022<br>Benoit Le Callennec<br>9bdad7f</p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; HE-Arc 2020-2022 - Tous droits réservés.</footer>
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#lighting-settings-preview-et-final">Lighting Settings PREVIEW et FINAL</a></li>
+    <li><a href="#objets-3d-statiques">Objets 3D statiques</a></li>
+    <li><a href="#lumières-statiques-et-lumières-dynamiques">Lumières statiques et lumières dynamiques</a></li>
+    <li><a href="#occlusion-ambiante">Occlusion Ambiante</a></li>
+    <li><a href="#light-probes">Light Probes</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

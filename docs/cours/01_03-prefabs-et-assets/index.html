@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapitre 1.3 : Prefabs et Assets#Les Prefab et les Assets servent à inclure du contenu dans votre application 3D.
+Prefabs#Un Prefab1 peut être vu comme un template de GameObject. Un Prefab est donc réutilisable et permet de facilement instancier de multiples copies du même GameObject dans une scène. Un des gros avantages des Prefabs est qu&rsquo;ils gardent chaque instance synchronisée avec eux-mêmes : tous les changements effectués sur le Prefab sont automatiquement répercutés sur leurs instances dans la scène.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Chapitre 1.3 : Prefabs et Assets" />
+<meta property="og:description" content="Chapitre 1.3 : Prefabs et Assets#Les Prefab et les Assets servent à inclure du contenu dans votre application 3D.
+Prefabs#Un Prefab1 peut être vu comme un template de GameObject. Un Prefab est donc réutilisable et permet de facilement instancier de multiples copies du même GameObject dans une scène. Un des gros avantages des Prefabs est qu&rsquo;ils gardent chaque instance synchronisée avec eux-mêmes : tous les changements effectués sur le Prefab sont automatiquement répercutés sur leurs instances dans la scène." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dev7629.dgs5n5xung966.amplifyapp.com/docs/cours/01_03-prefabs-et-assets/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2022-01-19T22:58:38+01:00" />
+
+<title>Chapitre 1.3 : Prefabs et Assets | HE-Arc | 3252.1 Introduction à Unity</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.dd45bb2be06d3824619a5d51f47bdf55c0288dbd629dfa4d140f41732aab37ff.js" integrity="sha256-3UW7K&#43;BtOCRhml1R9HvfVcAojb1infpNFA9BcyqrN/8="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-183976366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>HE-Arc | 3252.1 Introduction à Unity</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/00-introduction/" class="">Chapitre 0 : introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_01-prise-en-main/" class="">Chapitre 1.1 : prise en main</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_02-gameobjects-components-et-transforms/" class="">Chapitre 1.2 : GameObjects, Components et Transforms</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_03-prefabs-et-assets/" class="active">Chapitre 1.3 : Prefabs et Assets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_01-cameras/" class="">Chapitre 2.1 : caméras</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_02-materiaux/" class="">Chapitre 2.2 : matériaux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_03-illumination/" class="">Chapitre 2.3 : illumination</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/03-scripting/" class="">Chapitre 3 : scripting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/04_01-animation-de-personnages-3d/" class="">Chapitre 4.1 : animation de personnages 3D</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/05-illumination-globale/" class="">Chapitre 5 : illumination globale</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/06-post-processing/" class="">Chapitre 6 : post-processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/07-shadergraph/" class="">Chapitre 7 : Shader Graph</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Articles
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Chapitre 1.3 : Prefabs et Assets</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#prefabs">Prefabs</a>
+      <ul>
+        <li><a href="#éditer-un-prefab">Éditer un <em><strong>Prefab</strong></em></a></li>
+        <li><a href="#instance-overrides">Instance Overrides</a></li>
+        <li><a href="#nested-prefabs-et-prefabs-variants">Nested Prefabs et Prefabs Variants</a></li>
+      </ul>
+    </li>
+    <li><a href="#assets">Assets</a></li>
+    <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapitre-13--prefabs-et-assets">
+  Chapitre 1.3 : Prefabs et Assets
+  <a class="anchor" href="#chapitre-13--prefabs-et-assets">#</a>
+</h1>
+<p>Les <em><strong>Prefab</strong></em> et les <em><strong>Assets</strong></em> servent à inclure du contenu dans votre application 3D.</p>
+<h2 id="prefabs">
+  Prefabs
+  <a class="anchor" href="#prefabs">#</a>
+</h2>
+<p>Un <em><strong>Prefab</strong></em><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> peut être vu comme un template de <em><strong>GameObject</strong></em>.
+Un <em><strong>Prefab</strong></em> est donc réutilisable et permet de facilement instancier de multiples copies du même <em><strong>GameObject</strong></em> dans une scène.
+Un des gros avantages des <em><strong>Prefabs</strong></em> est qu&rsquo;ils gardent chaque instance synchronisée avec eux-mêmes : tous les changements effectués sur le <em><strong>Prefab</strong></em> sont automatiquement répercutés sur leurs instances dans la scène.
+Conceptuellement, tout ce passe comme ce qui est montré dans l&rsquo;image suivante :
+<figure><img src="/images/UnityPrefabs.png#center"/>
+</figure>
+
+Les <em><strong>Prefabs</strong></em> sont indépendants des scènes et peuvent donc être utilisés pour créer des instances dans plusieurs scènes de l&rsquo;application.
+Pour créer un <em><strong>Prefab</strong></em> à partir d&rsquo;un <em><strong>GameObject</strong></em> dans la scène, il suffit de glisser-déposer ce <em><strong>GameObject</strong></em> depuis la fenêtre <em><strong>Hierarchy</strong></em> vers la fenêtre <em><strong>Project</strong></em>.</p>
+<p>Les <em><strong>Prefabs</strong></em> sont identifiables dans la fenêtre <em><strong>Hierarchy</strong></em> par une icône de cube bleu à gauche de leur nom :
+<figure><img src="/images/UnityPrefabsInHierarchy.png#center"/>
+</figure>
+</p>
+<p>Pour instancier un <em><strong>GameObject</strong></em> à partir d&rsquo;un <em><strong>Prefab</strong></em>, il existe plusieurs méthodes. On peut en particulier le glisser-déposer depuis la fenêtre <em><strong>Project</strong></em> directement dans la scène ou dans la fenêtre <em><strong>Hierarchy</strong></em>.
+Il est aussi possible d&rsquo;instancier des <em><strong>Prefabs</strong></em> directement depuis un script.</p>
+<h3 id="éditer-un-prefab">
+  Éditer un <em><strong>Prefab</strong></em>
+  <a class="anchor" href="#%c3%a9diter-un-prefab">#</a>
+</h3>
+<p>Un <em><strong>Prefab</strong></em> est modifiable de plusieurs manières.
+Lorsqu&rsquo;un <em><strong>Prefab</strong></em> est modifié, toutes ses instances sont automatiquement mises à jour.
+Il n&rsquo;est pas possible de changer la structure d&rsquo;un <em><strong>Prefab</strong></em>, mais on peut lui rajouter des <em><strong>GameObjects</strong></em>.</p>
+<h4 id="depuis-linspector">
+  Depuis l’<em><strong>Inspector</strong></em>
+  <a class="anchor" href="#depuis-linspector">#</a>
+</h4>
+<p>Il est possible d&rsquo;éditer un <em><strong>Prefab</strong></em> depuis la fenêtre <em><strong>Inspector</strong></em> directement.</p>
+<h4 id="en-mode-dédition-de-prefab-isolé-2">
+  En mode d&rsquo;édition de <code>Prefab</code> isolé <sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+  <a class="anchor" href="#en-mode-d%c3%a9dition-de-prefab-isol%c3%a9-2">#</a>
+</h4>
+<p>Pour passer en mode d&rsquo;édition de <code>Prefab</code> (i.e. <code>Prefab Mode</code>) sans la scène (i.e. isolé), il suffit de sélectionner le <code>Prefab</code> dans la fenêtre <code>Project</code> puis de cliquer sur le bouton <code>Open Prefab</code> dans la fenêtre <code>Inspector</code>.
+Il est aussi possible de double-cliquer sur le <code>Prefab</code> dans la fenêtre <code>Project</code>.
+Unity ouvre ensuite le <code>Prefab</code> seul : le fond de la scène change et devient bleu pour indiquer que nous sommes dans un mode spécial.</p>
+<h4 id="en-mode-dédition-de-prefab-avec-le-contexte-2">
+  En mode d&rsquo;édition de <code>Prefab</code> avec le contexte <sup id="fnref1:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>
+  <a class="anchor" href="#en-mode-d%c3%a9dition-de-prefab-avec-le-contexte-2">#</a>
+</h4>
+<p>On passe en mode d&rsquo;édition de <code>Prefab</code> (i.e. <code>Prefab Mode</code>) avec la scène (i.e. le contexte), en cliquant sur la flèche à droite de leur nom dans la fenêtre <em><strong>Hierarchy</strong></em>.</p>
+<p>La vidéo suivante résume les points mentionnés ci-dessus :
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/_EFAiUWkN-g" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h3 id="instance-overrides">
+  Instance Overrides
+  <a class="anchor" href="#instance-overrides">#</a>
+</h3>
+<p>Il est possible de rajouter des variations particulières aux instances d’un <em><strong>Prefab</strong></em>.
+On parle alors d&rsquo;<em><strong>Instance overrides</strong></em><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.
+Les instances modifiées de cette manière restent toujours connectées à leur <em><strong>Prefab</strong></em> d&rsquo;origine (i.e. les modifications du <em><strong>Prefab</strong></em> sont répercutées sur l&rsquo;instance), à l&rsquo;exception des paramètres modifiés de l’instance qui ne sont plus mis à jour quand le <em><strong>Prefab</strong></em> est édité.
+Ces <em><strong>overrides</strong></em> sont indiqués en gras dans l’<em><strong>Inspector</strong></em>.</p>
+<p>La figure suivante résume succinctement le fonctionnement des <em><strong>overrides</strong></em> pour les <em><strong>Prefabs</strong></em> :
+<figure><img src="/images/UnityPrefabsOverrides.png#center"/>
+</figure>
+</p>
+<h3 id="nested-prefabs-et-prefabs-variants">
+  Nested Prefabs et Prefabs Variants
+  <a class="anchor" href="#nested-prefabs-et-prefabs-variants">#</a>
+</h3>
+<p>Il est possible d&rsquo;imbriquer des <em><strong>Prefabs</strong></em> dans des <em><strong>Prefabs</strong></em>.
+On appelle ceci des <em><strong>Nested Prefabs</strong></em><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup>.</p>
+<p>Des <em><strong>overrides</strong></em> peuvent aussi être convertis en <em><strong>Prefab</strong></em> pour créer des <em><strong>Prefab Variants</strong></em><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup>.</p>
+<p>En programmation orientée objet, on parlerait de composition pour les <em><strong>Nested Prefabs</strong></em> et d&rsquo;héritage pour les <em><strong>Prefab Variants</strong></em>.</p>
+<p>Comme nous pouvons le deviner, les <em><strong>Prefabs</strong></em> offrent une très grande flexibilité.
+Cependant, il faut respecter quelques règles pour éviter que les scènes ne deviennent inutilement complexes et finissent par devenir difficilement maintenables.
+Ces règles sont très similaires à celles concernant la programmation en générale, à savoir :</p>
+<ul>
+<li>il faut autant que possible rester simple;</li>
+<li>Il est impératif de choisir des noms explicites et adéquats pour les <em><strong>GameObjects</strong></em>, les <em><strong>Components</strong></em> (ceux que nous créons sous forme de scripts) ainsi que les <em><strong>Prefabs</strong></em>;</li>
+<li>il est fortement recommandé d&rsquo;éditer les <em><strong>Prefabs</strong></em> en utilisant le <em><strong>Prefab Mode</strong></em>.</li>
+</ul>
+<h2 id="assets">
+  Assets
+  <a class="anchor" href="#assets">#</a>
+</h2>
+<p>Comme rapidement expliqué précédemment, un <em><strong>Asset</strong></em> représente toute donnée qui est disponible pour le projet.
+Ces <em><strong>Assets</strong></em> peuvent être de différents types<sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> comme des textures, des objets 3D, des sons ou des musiques.
+Ils sont soit :</p>
+<ul>
+<li>créés directement dans unity comme les <em><strong>Animation Controller</strong></em>, les <em><strong>Audio Mixers</strong></em>, etc.;</li>
+<li>créés dans des logiciels externes (comme Blender<sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup> par exemple) et importés en tant que fichiers (<code>.fbx</code>, <code>.wav</code>, <code>.wav</code>, etc.);</li>
+<li>ou encore achetés sur l&rsquo;<em><strong>Asset Store</strong></em><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup> et importés dans le projet.</li>
+</ul>
+<p>Les <em><strong>Assets</strong></em> sont stockés dans le répertoire <code>Assets</code> de votre projet.
+Unity va ainsi surveiller ce répertoire en permanence et détecter lorsqu&rsquo;un <em><strong>Assets</strong></em> est ajouté, enlevé ou modifié.
+Par exemple, lorsqu&rsquo;un fichier contenant un objet 3D est modifié, Unity va automatiquement le réimporter et va mettre votre scène active à jour.
+Ceci permet de refléter immédiatement les changements apportés à l&rsquo;objet 3D.</p>
+<p>À chaque <em><strong>Assets</strong></em>, Unity assigne un identifiant unique et lui associe un fichier <code>.meta</code> avec le même nom, et dans le même répertoire.
+Il faut noter que ces fichier <code>.meta</code> sont très importants et ne doivent pas être manipulés.
+Enfin, il est possible de modifier la manière dont Unity va importer vos <em><strong>Assets</strong></em> dans la scène en utilisant les <em><strong>Import Settings</strong></em> associés.</p>
+<h2 id="pour-aller-plus-loin">
+  Pour aller plus loin
+  <a class="anchor" href="#pour-aller-plus-loin">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src="https://www.youtube.com/embed/videoseries?list=PLoMYgUbrKKtehxCdlHH1P4lZqJTOdUsbI"
+ frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+<h2 id="slides">
+  Slides
+  <a class="anchor" href="#slides">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src=https://unity3d.ch/Slides/Chap1_ConceptsFondamentaux.html frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 id="références">
+  Références
+  <a class="anchor" href="#r%c3%a9f%c3%a9rences">#</a>
+</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://docs.unity3d.com/Manual/Prefabs.html">Prefabs, Unity</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://docs.unity3d.com/Manual/EditingInPrefabMode.html">Editing a Prefab in Prefab Mode</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a>&#160;<a href="#fnref1:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://docs.unity3d.com/Manual/PrefabInstanceOverrides.html">Instance overrides, Unity</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://docs.unity3d.com/Manual/NestedPrefabs.html">Nested Prefabs, Unity</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://docs.unity3d.com/Manual/PrefabVariants.html">Prefab Variants, Unity</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://docs.unity3d.com/Manual/AssetTypes.html">Common types of assets, Unity</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://www.blender.org">Blender</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://assetstore.unity.com">Asset Store, Unity</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+
+
+
+  
+  
+  
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>January 19, 2022<br>Benoit Le Callennec<br>ff2d1b0</p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; HE-Arc 2020-2022 - Tous droits réservés.</footer>
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#prefabs">Prefabs</a>
+      <ul>
+        <li><a href="#éditer-un-prefab">Éditer un <em><strong>Prefab</strong></em></a></li>
+        <li><a href="#instance-overrides">Instance Overrides</a></li>
+        <li><a href="#nested-prefabs-et-prefabs-variants">Nested Prefabs et Prefabs Variants</a></li>
+      </ul>
+    </li>
+    <li><a href="#assets">Assets</a></li>
+    <li><a href="#pour-aller-plus-loin">Pour aller plus loin</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

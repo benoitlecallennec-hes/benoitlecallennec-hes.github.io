@@ -2,174 +2,66 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://lecallennec.com/courses/example/python/</loc>
-    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/courses/example/visualization/</loc>
-    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/courses/example/stats/</loc>
-    <lastmod>2021-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/talk/example-talk/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/event/</loc>
-    <lastmod>2030-06-01T13:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/courses/</loc>
-    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/courses/example/</loc>
-    <lastmod>2021-01-24T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/academic/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/categories/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/category/demo/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/post/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tags/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/post/getting-started/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/%E5%BC%80%E6%BA%90/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/category/%E6%95%99%E7%A8%8B/</loc>
-    <lastmod>2020-12-13T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/children-games/</loc>
+    <loc>https://www.lecallennec.com/</loc>
     <lastmod>2019-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/tag/gamification/</loc>
+    <loc>https://www.lecallennec.com/docs/</loc>
     <lastmod>2019-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/tag/history/</loc>
+    <loc>https://www.lecallennec.com/docs/projects/pantheon/</loc>
     <lastmod>2019-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/project/pantheon/</loc>
+    <loc>https://www.lecallennec.com/docs/publications/gsgs_2019/</loc>
     <lastmod>2019-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/project/</loc>
+    <loc>https://www.lecallennec.com/docs/projects/</loc>
     <lastmod>2019-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/publication-type/2/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
+    <loc>https://www.lecallennec.com/docs/publications/</loc>
+    <lastmod>2019-07-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/publication/gsgs_2019/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/publication_types/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/publication/</loc>
-    <lastmod>2019-07-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/slides/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/slides/example/</loc>
-    <lastmod>2019-02-05T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/publication/tog_2016/</loc>
+    <loc>https://www.lecallennec.com/docs/publications/tog_2016/</loc>
     <lastmod>2016-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/tag/computer-animation/</loc>
-    <lastmod>2016-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/gpu-computing/</loc>
-    <lastmod>2016-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/inverse-kinematics/</loc>
-    <lastmod>2016-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/parallelization/</loc>
-    <lastmod>2016-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/3d-character-posing/</loc>
+    <loc>https://www.lecallennec.com/docs/publications/cng_2016/</loc>
     <lastmod>2016-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/publication/cng_2016/</loc>
-    <lastmod>2016-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/artist-oriented-interface/</loc>
-    <lastmod>2016-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/sketch-based-system/</loc>
-    <lastmod>2016-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/project/mosketch/</loc>
+    <loc>https://www.lecallennec.com/docs/projects/mosketch/</loc>
     <lastmod>2016-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/tag/motion-editing/</loc>
-    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/sketch-based-interfaces/</loc>
-    <lastmod>2016-01-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/3d-gyroscope-and-accelerometer/</loc>
+    <loc>https://www.lecallennec.com/docs/publications/jss_2012/</loc>
     <lastmod>2012-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/publication/jss_2012/</loc>
+    <loc>https://www.lecallennec.com/docs/publications/gm_2006/</loc>
     <lastmod>2012-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/tag/field-measurement/</loc>
-    <lastmod>2012-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/motion-analysis/</loc>
-    <lastmod>2012-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/ski-jumping/</loc>
-    <lastmod>2012-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/publication-type/1/</loc>
-    <lastmod>2008-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/publication/ecss_2008/</loc>
-    <lastmod>2008-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/publication/sss_2008/</loc>
-    <lastmod>2008-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/project/ski-jumping-motion-analysis/</loc>
+    <loc>https://www.lecallennec.com/docs/projects/skijumping/</loc>
     <lastmod>2008-01-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/publication/wda3ds_2007/</loc>
-    <lastmod>2007-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/tag/computer-graphics/</loc>
+    <loc>https://www.lecallennec.com/docs/publications/sca_2006/</loc>
     <lastmod>2006-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/publication/sca_2006/</loc>
-    <lastmod>2006-08-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/publication-type/7/</loc>
+    <loc>https://www.lecallennec.com/docs/projects/motionediting/</loc>
     <lastmod>2006-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/publication/gm_2006/</loc>
+    <loc>https://www.lecallennec.com/docs/publications/phd_2006/</loc>
     <lastmod>2006-03-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/project/interactive-motion-editing/</loc>
-    <lastmod>2006-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/publication/phd_2006/</loc>
-    <lastmod>2006-03-01T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://lecallennec.com/publication/sca_2004/</loc>
+    <loc>https://www.lecallennec.com/docs/publications/sca_2004/</loc>
     <lastmod>2004-08-01T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://lecallennec.com/admin/</loc>
+    <loc>https://www.lecallennec.com/posts/</loc>
+  </url><url>
+    <loc>https://www.lecallennec.com/posts/coco-de-pixar-quelques-chiffres/</loc>
+  </url><url>
+    <loc>https://www.lecallennec.com/tags/general/</loc>
+  </url><url>
+    <loc>https://www.lecallennec.com/posts/photorealism-explained/</loc>
+  </url><url>
+    <loc>https://www.lecallennec.com/tags/</loc>
+  </url><url>
+    <loc>https://www.lecallennec.com/docs/teaching/</loc>
+  </url><url>
+    <loc>https://www.lecallennec.com/tags/tldr/</loc>
   </url>
 </urlset>

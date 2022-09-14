@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Interactive Techniques For Motion Deformation Of Articulated Figures Using Prioritized Constraints#Benoit Le Callennec. PhD Thesis, 2006.#ABSTRACT#Convincingly animating virtual humans has become of great interest in many fields since recent years. In computer games for example, virtual humans often are the main characters. Failing to realistically animate them may wreck all previous efforts made to provide the player with an immersion feeling. At the same time, computer generated movies have become very popular and thus have increased the demand for animation realism.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Interactive Techniques For Motion Deformation Of Articulated Figures Using Prioritized Constraints" />
+<meta property="og:description" content="Interactive Techniques For Motion Deformation Of Articulated Figures Using Prioritized Constraints#Benoit Le Callennec. PhD Thesis, 2006.#ABSTRACT#Convincingly animating virtual humans has become of great interest in many fields since recent years. In computer games for example, virtual humans often are the main characters. Failing to realistically animate them may wreck all previous efforts made to provide the player with an immersion feeling. At the same time, computer generated movies have become very popular and thus have increased the demand for animation realism." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://www.lecallennec.com/docs/publications/phd_2006/" /><meta property="og:image" content="https://www.lecallennec.com/docs/publications/phd_2006/featured.jpg"/><meta property="article:section" content="docs" />
+<meta property="article:published_time" content="2006-03-01T00:00:00+00:00" />
+<meta property="article:modified_time" content="2006-03-01T00:00:00+00:00" />
+
+<title>Interactive Techniques For Motion Deformation Of Articulated Figures Using Prioritized Constraints | Benoit Le Callennec</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.4ab25d1e764ff9c40f9d20ae76b7a412d31eeef8870738d67d3dc9062e77a9a4.js" integrity="sha256-SrJdHnZP&#43;cQPnSCudrekEtMe7viHBzjWfT3JBi53qaQ="></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-T3BG1HKYZW"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-T3BG1HKYZW');
+</script>
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>Benoit Le Callennec</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/projects/" class="">PROJECTS</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/publications/" class="">PUBLICATIONS</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/teaching/" class="">TEACHING</a>
+  
+
+          
+  
+  
+  
+
+  
+  <ul>
+    
+  </ul>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        ARTICLES
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">  
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Interactive Techniques For Motion Deformation Of Articulated Figures Using Prioritized Constraints</strong>
+
+  <label for="toc-control">
+    
+  </label>
+</div>
+
+
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="interactive-techniques-for-motion-deformation-of-articulated-figures-using-prioritized-constraints">
+  Interactive Techniques For Motion Deformation Of Articulated Figures Using Prioritized Constraints
+  <a class="anchor" href="#interactive-techniques-for-motion-deformation-of-articulated-figures-using-prioritized-constraints">#</a>
+</h1>
+<h3 id="benoit-le-callennec-phd-thesis-2006">
+  Benoit Le Callennec. PhD Thesis, 2006.
+  <a class="anchor" href="#benoit-le-callennec-phd-thesis-2006">#</a>
+</h3>
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/qHepnSkVztg" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+<h2 id="abstract">
+  ABSTRACT
+  <a class="anchor" href="#abstract">#</a>
+</h2>
+<p>Convincingly animating virtual humans has become of great interest in many fields since recent years.
+In computer games for example, virtual humans often are the main characters.
+Failing to realistically animate them may wreck all previous efforts made to provide the player with an immersion feeling.
+At the same time, computer generated movies have become very popular and thus have increased the demand for animation realism.
+Indeed, virtual humans are now the new stars in movies like Final Fantasy or Shrek, or are even used for special effects in movies like Matrix.
+In this context, Virtual human animations not only need to be realistic as for computer games, but really need to be expressive as for real actors.
+While creating animations from scratch is still widespread, it demands artistic skills and hours if not days to produce few seconds of animation.
+For these reasons, there has been a growing interest for motion capture: instead of creating a motion, the idea is to reproduce the movements of a live performer.
+However, motion capture is not perfect and still needs improvements. Indeed, the motion capture process involves complex techniques and equipments.
+This often results in noisy animations which must be edited. Moreover, it is hard to exactly foresee the final motion. For example, it often happens that the director of a movie decides to change the script. The animators then have to change part or the whole animation.
+The aim of this thesis is then to provide animators with interactive tools helping them to easily and rapidly modify preexisting animations.
+We first present our IK solver used to enforce kinematic constraints at each time of an animation. Afterward, we propose a motion deformation framework offering the user a way to specify prioritized constraints and to edit an initial animation so that it may be used in a new context (characters, environment,etc).
+Finally, we introduce a semi-automatic algorithm to extract important motion features from motion capture animation which may serve as a first guess for the animators when specifying important characteristics an initial animation should respect.</p>
+<h2 id="hahahugoshortcode-s2-hbhb">
+  
+
+
+
+  
+
+<a  href="/docs/projects/motionediting/"   class="book-btn">
+  PROJECT
+</a>
+
+
+
+
+  
+  
+
+
+<a  href="https://infoscience.epfl.ch/record/64350"   target="_blank"  class="book-btn">
+  VIEW AT PUBLISHER
+</a>
+
+  <a class="anchor" href="#hahahugoshortcode-s2-hbhb">#</a>
+</h2>
+</article>
+ 
+      
+
+
+
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>September 14, 2022<br>Generated content<br> </p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; Le Callennec 2020-2023 - Tous droits réservés.</footer>
+
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+

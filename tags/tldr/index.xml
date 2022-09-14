@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>TLDR on Benoit Le Callennec</title>
+    <link>https://www.lecallennec.com/tags/tldr/</link>
+    <description>Recent content in TLDR on Benoit Le Callennec</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language><atom:link href="https://www.lecallennec.com/tags/tldr/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Coco from Pixar : some numbers</title>
+      <link>https://www.lecallennec.com/posts/coco-de-pixar-quelques-chiffres/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lecallennec.com/posts/coco-de-pixar-quelques-chiffres/</guid>
+      <description>This post summarizes some interesting facts mentionned in an interview given by Renee Tam from Pixar at Foundry (October, 25th 2017) 1.
+Coco movie 2 contains:
+8.7 millions lights 27 millions objects 1 billions assets The most challenging scenes required up to 450 hours of rendering per frame.
+By implementing some optimization techniques, in particular by pre-processing some backgrounds areas, they were able to accelerate rendering time to 55 hours per frame.</description>
+    </item>
+    
+    <item>
+      <title>Photoréalisme : les points importants</title>
+      <link>https://www.lecallennec.com/posts/photorealism-explained/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://www.lecallennec.com/posts/photorealism-explained/</guid>
+      <description>This article summarizes the most interesting points made in the following video:
+75% of images in IKEA&amp;rsquo;s are in fact photorealistic CG images (and no photographs).
+CG offers greater flexibility. They most importantly allow to visualize objetcts that do not exist yet.
+There are 4 fundamental elements that must be of the utmost quality to generate realistic CG images: modeling, materials, illumination and post-processing.
+The most time-consuming domains are materials and illumination.</description>
+    </item>
+    
+  </channel>
+</rss>

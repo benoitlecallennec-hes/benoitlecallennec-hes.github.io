@@ -1,0 +1,1114 @@
+<!DOCTYPE html>
+<html lang="en" dir=>
+
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Chapitre 3 : scripting#Dans Unity, l&rsquo;intelligence de l&rsquo;application 3D se programme grâce à des scripts C#. Lorsque ces scripts sont attachés à un GameObject, alors Unity les exécute en fonction des événements qui interviennent.
+Hello World#Pour attacher un script à un objet dans la scène 3D, il faut sélectionner le GameObject puis cliquer sur le bouton Add Component. Ensuite, on renseigne le nom du script que l&rsquo;on souhaite attacher.">
+<meta name="theme-color" content="#FFFFFF"><meta property="og:title" content="Chapitre 3 : scripting" />
+<meta property="og:description" content="Chapitre 3 : scripting#Dans Unity, l&rsquo;intelligence de l&rsquo;application 3D se programme grâce à des scripts C#. Lorsque ces scripts sont attachés à un GameObject, alors Unity les exécute en fonction des événements qui interviennent.
+Hello World#Pour attacher un script à un objet dans la scène 3D, il faut sélectionner le GameObject puis cliquer sur le bouton Add Component. Ensuite, on renseigne le nom du script que l&rsquo;on souhaite attacher." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://dev7629.dgs5n5xung966.amplifyapp.com/docs/cours/03-scripting/" /><meta property="article:section" content="docs" />
+
+<meta property="article:modified_time" content="2022-02-14T11:48:40+01:00" />
+
+<title>Chapitre 3 : scripting | HE-Arc | 3252.1 Introduction à Unity</title>
+<link rel="manifest" href="/manifest.json">
+<link rel="icon" href="/favicon.png" type="image/x-icon">
+<link rel="stylesheet" href="/book.min.2acd3a84969eb86606863f38fd1177b04d0b09a2590b95a7fc53cce47dd46f34.css" integrity="sha256-Ks06hJaeuGYGhj84/RF3sE0LCaJZC5Wn/FPM5H3UbzQ=">
+<script defer src="/en.search.min.dd45bb2be06d3824619a5d51f47bdf55c0288dbd629dfa4d140f41732aab37ff.js" integrity="sha256-3UW7K&#43;BtOCRhml1R9HvfVcAojb1infpNFA9BcyqrN/8="></script>
+
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-183976366-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+<!--
+Made with Book Theme
+https://github.com/alex-shpak/hugo-book
+-->
+
+  
+</head>
+
+<body dir=>
+  <input type="checkbox" class="hidden toggle" id="menu-control" />
+  <input type="checkbox" class="hidden toggle" id="toc-control" />
+  <main class="container flex">
+    <aside class="book-menu">
+      
+  <nav>
+<h2 class="book-brand">
+  <a href="/"><span>HE-Arc | 3252.1 Introduction à Unity</span>
+  </a>
+</h2>
+
+
+<div class="book-search">
+  <input type="text" id="book-search-input" placeholder="Search" aria-label="Search" maxlength="64" data-hotkeys="s/" />
+  <div class="book-search-spinner hidden"></div>
+  <ul id="book-search-results"></ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+  
+  
+
+  
+  <ul>
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/00-introduction/" class="">Chapitre 0 : introduction</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_01-prise-en-main/" class="">Chapitre 1.1 : prise en main</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_02-gameobjects-components-et-transforms/" class="">Chapitre 1.2 : GameObjects, Components et Transforms</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/01_03-prefabs-et-assets/" class="">Chapitre 1.3 : Prefabs et Assets</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_01-cameras/" class="">Chapitre 2.1 : caméras</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_02-materiaux/" class="">Chapitre 2.2 : matériaux</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/02_03-illumination/" class="">Chapitre 2.3 : illumination</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/03-scripting/" class="active">Chapitre 3 : scripting</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/04_01-animation-de-personnages-3d/" class="">Chapitre 4.1 : animation de personnages 3D</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/05-illumination-globale/" class="">Chapitre 5 : illumination globale</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/06-post-processing/" class="">Chapitre 6 : post-processing</a>
+  
+
+        </li>
+      
+    
+      
+        <li>
+          
+  
+    <a href="/docs/cours/07-shadergraph/" class="">Chapitre 7 : Shader Graph</a>
+  
+
+        </li>
+      
+    
+  </ul>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+<ul>
+  
+  <li>
+    <a href="/posts/" >
+        Articles
+      </a>
+  </li>
+  
+</ul>
+
+
+
+
+
+
+</nav>
+
+
+
+
+  <script>(function(){var e=document.querySelector("aside.book-menu nav");addEventListener("beforeunload",function(){localStorage.setItem("menu.scrollTop",e.scrollTop)}),e.scrollTop=localStorage.getItem("menu.scrollTop")})()</script>
+
+
+ 
+    </aside>
+
+    <div class="book-page">
+      <header class="book-header">
+        
+  <div class="flex align-center justify-between">
+  <label for="menu-control">
+    <img src="/svg/menu.svg" class="book-icon" alt="Menu" />
+  </label>
+
+  <strong>Chapitre 3 : scripting</strong>
+
+  <label for="toc-control">
+    
+    <img src="/svg/toc.svg" class="book-icon" alt="Table of Contents" />
+    
+  </label>
+</div>
+
+
+  
+  <aside class="hidden clearfix">
+    
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hello-world">Hello World</a></li>
+    <li><a href="#event-functions">Event Functions</a></li>
+    <li><a href="#timedeltatime">Time.DeltaTime</a></li>
+    <li><a href="#modifier-des-bcodegameobjectscodeb-à-lexécution">Modifier des <b><code>GameObjects</code></b> à l&rsquo;exécution</a>
+      <ul>
+        <li><a href="#modifier-les-bcodecomponentscodeb-du-même-bcodegameobjectcodeb">Modifier les <b><code>Components</code></b> du même <b><code>GameObject</code></b></a></li>
+        <li><a href="#modifier-les-bcodecomponentscodeb-dautres-bcodegameobjectscodeb-connus">Modifier les <b><code>Components</code></b> d&rsquo;autres <b><code>GameObjects</code></b> connus</a></li>
+        <li><a href="#modifier-les-bcodecomponentscodeb-dautres-bcodegameobjectscodeb-créés-dynamiquement">Modifier les <b><code>Components</code></b> d&rsquo;autres <b><code>GameObjects</code></b> créés dynamiquement</a></li>
+      </ul>
+    </li>
+    <li><a href="#recherche-de-bcodegameobjectscodeb-à-lexécution">Recherche de <b><code>GameObjects</code></b> à l&rsquo;exécution</a></li>
+    <li><a href="#instancier-et-détruire-des-bcodegameobjectscodeb-à-lexécution">Instancier et détruire des <b><code>GameObjects</code></b> à l&rsquo;exécution</a></li>
+    <li><a href="#user-inputs">User Inputs</a></li>
+    <li><a href="#coroutines">Coroutines</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+
+  </aside>
+  
+ 
+      </header>
+
+      
+      
+  <article class="markdown"><h1 id="chapitre-3--scripting">
+  Chapitre 3 : scripting
+  <a class="anchor" href="#chapitre-3--scripting">#</a>
+</h1>
+<p>Dans Unity, l&rsquo;intelligence de l&rsquo;application 3D se programme grâce à des scripts C#.
+Lorsque ces scripts sont attachés à un <b><code>GameObject</code></b>, alors Unity les exécute en fonction des événements qui interviennent.</p>
+<h2 id="hello-world">
+  Hello World
+  <a class="anchor" href="#hello-world">#</a>
+</h2>
+<p>Pour attacher un script à un objet dans la scène 3D, il faut sélectionner le <b><code>GameObject</code></b> puis cliquer sur le bouton <code>Add Component</code>.
+Ensuite, on renseigne le nom du script que l&rsquo;on souhaite attacher.
+La figure suivante résume ce que vous devriez obtenir :
+<figure><img src="/images/UnityScriptComponent.png#center"/>
+</figure>
+</p>
+<p>S&rsquo;il n&rsquo;est pas présent, alors il est automatiquement créé en cliquant sur <code>New Script</code> puis sur <code>Create and Add</code>.
+Le script peut ensuite être ouvert dans votre IDE en double-cliquant dessus.
+Il ressemble à ce qui suit :</p>
+<p><div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start is called before the first frame update</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update is called once per frame</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+Le script contient déjà 2 fonctions importantes : <code>void Start()</code> et <code>void Update()</code>.
+Comme indiqué dans les commentaires :</p>
+<ul>
+<li><code>void Start()</code> est appelée <strong>1 seule fois</strong>, au début de l&rsquo;exécution;</li>
+<li><code>void Update()</code> est appelée <strong>à chaque frame</strong>.</li>
+</ul>
+<p>Il est très facile d&rsquo;afficher un message à chaque appel à <code>void Start()</code> ainsi qu&rsquo;à <code>void Update()</code>.
+Pour cela, il suffit de modifier le script pour rajouter un appel à la fonction <code>Log()</code> de la classe <code>Debug</code><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> comme indiqué dans le code qui suit :</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">HelloWorld</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Start is called before the first frame update</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        Debug.Log(<span style="color:#e6db74">&#34;Hello Start()&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Update is called once per frame</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        Debug.Log(<span style="color:#e6db74">&#34;Hello Update()&#34;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div>
+<p>Lorsque l&rsquo;on exécute l&rsquo;application, on peut regarder ce qui est affiché dans la fenêtre <code>Console</code> :
+<figure><img src="/images/UnityHelloWorldConsole.png#center"/>
+</figure>
+
+En particulier, on remarque bien que le message <code>Hello Start()</code> est affiché une seul fois au début, et que le message <code>Hello Update()</code> est affiché en continu, comme attendu.</p>
+<p>Comme vous l&rsquo;avez sans doute déjà remarqué, un <b><code>Script</code></b> est en fait un <b><code>Component</code></b>.
+Il doit donc être attaché à un <b><code>GameObject</code></b> pour être exécuté.
+De plus, il faut noter que les membres publics d&rsquo;un <b><code>Script</code></b> sont automatiquement accessibles depuis l&rsquo;éditeur de Unity.
+C&rsquo;est très pratique lorsque l&rsquo;on souhaite pouvoir modifier et tester rapidement des paramètres du script à l&rsquo;exécution.
+Enfin, il faut remarquer que le <b><code>Script</code></b> hérite de la classe <code>MonoBehavior</code>.
+C&rsquo;est la classe <code>MonoBehavior</code> qui gère en particulier le comportement général du <b><code>Script</code></b> (quand il est instancié, quelles fonctions sont appelées, quand elles sont appelées, etc.).</p>
+<blockquote class="book-hint danger">
+  <strong>Constructor et Destructor</strong><br>
+Unity gère lui-même la création et la destruction des <b><code>Scripts</code></b>.
+Il ne faut donc surtout pas implémenter les constructeurs au risque de perturber le fonctionnement complet de votre application.
+</blockquote>
+
+<h2 id="event-functions">
+  Event Functions
+  <a class="anchor" href="#event-functions">#</a>
+</h2>
+<p>Les <b><code>Scripts</code></b> ont des points d&rsquo;entrées (des fonctions) prédéfinis qui vont être automatiquement appelés par Unity en réponse à certains événements : ce sont les <b><code>Event Functions</code></b><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>.</p>
+<blockquote class="book-hint info">
+  <p><strong>Remarque</strong></p>
+<p>les fonctions <code>void Start()</code> et <code>void Update()</code> sont des <b><code>Event Functions</code></b>.</p>
+
+</blockquote>
+
+<p>L&rsquo;ordre d&rsquo;exécution des <b><code>Event Functions</code></b> est important.
+La figure suivante résume les principales <b><code>Event Functions</code></b> et surtout leur ordre d&rsquo;exécution :
+<figure><img src="/images/UnityEventFunctionsExecOrder.png#center"/>
+</figure>
+</p>
+<p>Elles sont documentées dans la classe <code>MonoBehavior</code><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup>.
+Il faut noter qu&rsquo;elles sont très nombreuses et que seul un sous-ensemble d&rsquo;entre elles est en général utilisé.
+La vidéo suivante donne un aperçu de la séquence d&rsquo;appel de l&rsquo;ensemble des <b><code>Event Functions</code></b><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup> :
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/MGGekJoXeuQ" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+</p>
+<h2 id="timedeltatime">
+  Time.DeltaTime
+  <a class="anchor" href="#timedeltatime">#</a>
+</h2>
+<p>Il est important de garder à l&rsquo;esprit que la fonction <code>void Update()</code> est appelée à chaque frame, c&rsquo;est-à-dire aussi souvent que possible.
+Par conséquent, elle ne tient pas compte du temps écoulé entre 2 frames rendues.
+Ainsi, le résultat de la fonction <code>void Update()</code> peut dépendre du frame rate.
+Par exemple, lorsqu&rsquo;elle chargée de déplacer un <b><code>GameObject</code></b> d&rsquo;une certaine distance à chaque frame, alors :</p>
+<ul>
+<li>si le frame rate est élevé (par exemple sur une machine puissante), elle sera appelée très souvent. Le <b><code>GameObject</code></b> se déplacera donc très vite.</li>
+<li>Au contraire, si le frame rate est faible, elle sera appelée moins souvent. Le <b><code>GameObject</code></b> se déplacera dans ce cas plus lentement.</li>
+</ul>
+<p>En général, avoir une application 3D dont le comportement dépend de la machine sur laquelle elle est exécutée n&rsquo;est pas souhaitable.
+Pour corriger ce problème, il faut utiliser <code>Time.DeltaTime</code> qui nous renseigne sur le temps écoulé depuis le dernier appel à <code>void Update()</code>.
+Ainsi, il est facile de rendre l&rsquo;exécution de cette fonction indépendante du frame rate :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> speed = <span style="color:#ae81ff">5</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">float</span> distance = speed * Time.deltaTime;
+</span></span><span style="display:flex;"><span>  transform.Translate(Vector3.up * distance);
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<!--- there is a bug when including shortcodes in headers. So we must use the alternative syntax. -->
+<h2 id="modifier-des-bcodegameobjectscodeb-à-lexécution">
+  Modifier des <b><code>GameObjects</code></b> à l&rsquo;exécution
+  <a class="anchor" href="#modifier-des-bcodegameobjectscodeb-%c3%a0-lex%c3%a9cution">#</a>
+</h2>
+<p>Un script peut modifier les <b><code>Components</code></b> :</p>
+<ol>
+<li>appartenant au même <b><code>GameObject</code></b> (celui auquel il est attaché);</li>
+<li>appartenant à d&rsquo;autres <b><code>GameObjects</code></b> qu&rsquo;il connaît au préalable;</li>
+<li>appartenant à d&rsquo;autres <b><code>GameObjects</code></b> qui sont instanciés (et détruits) dynamiquement.</li>
+</ol>
+<!--- there is a bug when including shortcodes in headers. So we must use the alternative syntax. -->
+<h3 id="modifier-les-bcodecomponentscodeb-du-même-bcodegameobjectcodeb">
+  Modifier les <b><code>Components</code></b> du même <b><code>GameObject</code></b>
+  <a class="anchor" href="#modifier-les-bcodecomponentscodeb-du-m%c3%aame-bcodegameobjectcodeb">#</a>
+</h3>
+<p>Un <b><code>Script</code></b> a accès aux <b><code>Components</code></b> attachés au même <b><code>GameObject</code></b> en utilisant leur type :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Component GetComponent&lt;Type&gt;();</span></span></code></pre></div>
+Ou plus rarement :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> Component[] GetComponents&lt;Type&gt;();</span></span></code></pre></div>
+Par exemple, pour récupérer le <b><code>RigidBody</code></b> attaché au même <b><code>GameObject</code></b> que le <b><code>Script</code></b>, on peut faire :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">var</span> rigidBody = GetComponent&lt;Rigidbody&gt;();
+</span></span><span style="display:flex;"><span>rigidBody.AddForce(<span style="color:#66d9ef">new</span> Vector3(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">500</span>, <span style="color:#ae81ff">0</span>));
+</span></span><span style="display:flex;"><span>rigidBody.AddTorque(<span style="color:#66d9ef">new</span> Vector3(<span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">30</span>, <span style="color:#ae81ff">30</span>));</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<!--- there is a bug when including shortcodes in headers. So we must use the alternative syntax. -->
+<h3 id="modifier-les-bcodecomponentscodeb-dautres-bcodegameobjectscodeb-connus">
+  Modifier les <b><code>Components</code></b> d&rsquo;autres <b><code>GameObjects</code></b> connus
+  <a class="anchor" href="#modifier-les-bcodecomponentscodeb-dautres-bcodegameobjectscodeb-connus">#</a>
+</h3>
+<p>Il est possible pour un <b><code>Script</code></b> de modifier des <b><code>Components</code></b> appartenant à d&rsquo;autres <b><code>GameObjects</code></b>.
+En particulier, si le <b><code>GameObject</code></b> est connu au préalable, et si le lien entre le <b><code>Script</code></b> et le <b><code>GameObject</code></b> (ou le <b><code>Component</code></b>) à interroger ou modifier est permanent, alors on peut tout simplement rajouter un membre public dans le <b><code>Script</code></b> du type du <b><code>Component</code></b> que l&rsquo;on attend :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CheckProximityObserver</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">public</span> GameObject go1;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">public</span> GameObject go2;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    ...
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>Comme les membres sont publics, alors ils sont directement visibles dans l&rsquo;éditeur.
+Il suffit donc de faire un drag-and-drop des <b><code>GameObjects</code></b> que l&rsquo;on souhaite utiliser :
+<figure><img src="/images/UnityGOAsPublicMember.png#center"/>
+</figure>
+</p>
+<p>Ensuite, dans le <b><code>Script</code></b>, on peut tout simplement utiliser les <b><code>GameObjects</code></b> (ou les <b><code>Components</code></b>) liés de la manière suivante :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#66d9ef">var</span> pos1 = go1.transform.position;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#66d9ef">var</span> pos2 = go2.transform.position;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">var</span> distance = pos2 - pos1;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (distance.magnitude &lt; maxDistance)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            <span style="color:#66d9ef">var</span> m1 = go1.GetComponent&lt;Renderer&gt;().material;
+</span></span><span style="display:flex;"><span>            m1.color = <span style="color:#66d9ef">new</span> Color(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            <span style="color:#66d9ef">var</span> m2 = go2.GetComponent&lt;Renderer&gt;().material;
+</span></span><span style="display:flex;"><span>            m2.color = <span style="color:#66d9ef">new</span> Color(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">else</span>
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            <span style="color:#66d9ef">var</span> m1 = go1.GetComponent&lt;Renderer&gt;().material;
+</span></span><span style="display:flex;"><span>            m1.color = <span style="color:#66d9ef">new</span> Color(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            <span style="color:#66d9ef">var</span> m2 = go2.GetComponent&lt;Renderer&gt;().material;
+</span></span><span style="display:flex;"><span>            m2.color = <span style="color:#66d9ef">new</span> Color(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>);
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<!--- there is a bug when including shortcodes in headers. So we must use the alternative syntax. -->
+<h3 id="modifier-les-bcodecomponentscodeb-dautres-bcodegameobjectscodeb-créés-dynamiquement">
+  Modifier les <b><code>Components</code></b> d&rsquo;autres <b><code>GameObjects</code></b> créés dynamiquement
+  <a class="anchor" href="#modifier-les-bcodecomponentscodeb-dautres-bcodegameobjectscodeb-cr%c3%a9%c3%a9s-dynamiquement">#</a>
+</h3>
+<p>Si les <b><code>GameObjects</code></b> sont créés et détruits dynamiquement, alors il est préférable de tous les grouper en les parentant au même <b><code>GameObject</code></b>.
+Ce dernier va donc servir de conteneur, que l&rsquo;on passe au script en utilisant un membre public.
+Il ne reste plus qu&rsquo;à itérer sur tous les <b><code>Components</code></b> du conteneur ayant le type désiré :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CheckProximityObserver2</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">public</span> Transform chairs;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> maxDistance;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#75715e">// Iterate over all Transforms (children) contained in chairs group</span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>        <span style="color:#66d9ef">foreach</span> (Transform t1 <span style="color:#66d9ef">in</span> chairs)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">string</span> name = transform.name;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>            <span style="color:#75715e">// First reset its color to ok</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">var</span> mat = t1.GetComponent&lt;Renderer&gt;().material;
+</span></span><span style="display:flex;"><span>            mat.color = <span style="color:#66d9ef">new</span> Color(<span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            <span style="color:#66d9ef">foreach</span> (Transform t2 <span style="color:#66d9ef">in</span> chairs)
+</span></span><span style="display:flex;"><span>            {
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (t1 == t2)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">continue</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">var</span> currentDistance = (t1.position - t2.position).magnitude;
+</span></span><span style="display:flex;"><span>                <span style="color:#66d9ef">if</span> (currentDistance &lt; maxDistance)
+</span></span><span style="display:flex;"><span>                {
+</span></span><span style="display:flex;"><span>                    <span style="color:#75715e">// Then set color to error</span>
+</span></span><span style="display:flex;"><span>                    mat.color = <span style="color:#66d9ef">new</span> Color(<span style="color:#ae81ff">1</span>, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>                    <span style="color:#66d9ef">break</span>;
+</span></span><span style="display:flex;"><span>                }
+</span></span><span style="display:flex;"><span>            }
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h2 id="recherche-de-bcodegameobjectscodeb-à-lexécution">
+  Recherche de <b><code>GameObjects</code></b> à l&rsquo;exécution
+  <a class="anchor" href="#recherche-de-bcodegameobjectscodeb-%c3%a0-lex%c3%a9cution">#</a>
+</h2>
+<p>Il est possible de rechercher des <b><code>GameObjects</code></b> à l&rsquo;exécution en utilisant leur nom ou leur tag grâce au fonctions suivantes :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> GameObject Find(<span style="color:#66d9ef">string</span> name);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> GameObject FindWithTag(<span style="color:#66d9ef">string</span> tag);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> GameObject[] FindGameObjectsWithTag(<span style="color:#66d9ef">string</span> tag);</span></span></code></pre></div>
+Par exemple, il est possible de récupérer tous les <b><code>GameObjects</code></b> qui ont comme <code>Tag</code> &ldquo;Cubes&rdquo; :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">var</span> GOs = GameObject.Find(<span style="color:#e6db74">&#34;Cube&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">var</span> firstCube = GameObject.FindWithTag(<span style="color:#e6db74">&#34;Cubes&#34;</span>);
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span><span style="color:#66d9ef">var</span> allCubes = GameObject.FindGameObjectsWithTag(<span style="color:#e6db74">&#34;Cubes&#34;</span>);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">foreach</span>(GameObject go <span style="color:#66d9ef">in</span> allCubes)
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// Do great things here</span>
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h2 id="instancier-et-détruire-des-bcodegameobjectscodeb-à-lexécution">
+  Instancier et détruire des <b><code>GameObjects</code></b> à l&rsquo;exécution
+  <a class="anchor" href="#instancier-et-d%c3%a9truire-des-bcodegameobjectscodeb-%c3%a0-lex%c3%a9cution">#</a>
+</h2>
+<p>Il est possible d&rsquo;instancier des <b><code>GameObjects</code></b> à l&rsquo;exécution en utilisant la méthode <code>Instantiate</code><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Object Instantiate(Object original);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Object Instantiate(Object original, Transform parent);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Object Instantiate(Object original, Transform parent, <span style="color:#66d9ef">bool</span> instantiateInWorldSpace);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Object Instantiate(Object original, Vector3 position, Quaternion rotation);
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> Object Instantiate(Object original, Vector3 position, Quaternion rotation, Transform parent);</span></span></code></pre></div>
+L&rsquo;objet <code>original</code> est souvent un <b><code>Prefab</code></b> passé en paramètre du script.</p>
+<p>Il est enfin aussi possible de détruire des <b><code>GameObjects</code></b> à l&rsquo;exécution avec la méthode <code>Destroy</code><sup id="fnref:6"><a href="#fn:6" class="footnote-ref" role="doc-noteref">6</a></sup> :
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> Destroy(Object obj, <span style="color:#66d9ef">float</span> t = <span style="color:#ae81ff">0.0F</span>);</span></span></code></pre></div></p>
+<h2 id="user-inputs">
+  User Inputs
+  <a class="anchor" href="#user-inputs">#</a>
+</h2>
+<p>Pour une application 3D interactive, il est important de pouvoir écouter et récupérer les entrées de l&rsquo;utilisateur.
+Dans Unity, ces entrées sont configurables en allant dans le menu <code>Edit &gt; Projects Settings</code> :
+<figure><img src="/images/UnityEditProjectSettings.png#center"/>
+</figure>
+
+En sélectionnant <code>Input Manager</code>, vous obtenez une fenêtre similaire à celle montrée dans la figure suivante :
+<figure><img src="/images/UnityInputManagerWindow.png#center"/>
+</figure>
+</p>
+<p>Dans votre <b><code>Script</code></b>, il est ensuite facile de vérifier si l&rsquo;utilisateur est en train de &ldquo;se déplacer&rdquo;, en interrogeant l&rsquo;état de l&rsquo;<code>Axis</code> comme dans le code qui suit :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> speed = <span style="color:#ae81ff">1.0f</span>;
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">float</span> hdisplacement = Input.GetAxis(<span style="color:#e6db74">&#34;Horizontal&#34;</span>);
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">var</span> displacement = <span style="color:#66d9ef">new</span> Vector3(hdisplacement, <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>);
+</span></span><span style="display:flex;"><span>    displacement *= speed * Time.deltaTime;
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// DOES NOT WORK</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// transform.position.x += displacement.x;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// OK</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// transform.position += displacement;</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">// OK</span>
+</span></span><span style="display:flex;"><span>    transform.Translate(displacement);
+</span></span><span style="display:flex;"><span>  }</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<h2 id="coroutines">
+  Coroutines
+  <a class="anchor" href="#coroutines">#</a>
+</h2>
+<p>Les <b><code>Event Functions</code></b> dans les <b><code>Scripts</code></b> sont synchrones : elles vont bloquer l&rsquo;application le temps qu&rsquo;elles s&rsquo;exécutent.
+On peut rendre certaines fonctions non-bloquantes en utilisant des <b><code>Coroutines</code></b><sup id="fnref:7"><a href="#fn:7" class="footnote-ref" role="doc-noteref">7</a></sup>.
+C&rsquo;est utile par exemple :</p>
+<ul>
+<li>pour répartir de <strong>longs calculs</strong> sur plusieurs frames;</li>
+<li>pour simuler un timer qui va exécuter une action après un certain délai.</li>
+</ul>
+<p>Pour séparer les longs calculs sur plusieurs frames par exemple, il faut :</p>
+<ol>
+<li>définir une <b><code>Coroutine</code></b>. Ceci se fait en définissant une méthode qui retourne un objet de type <code>IEnumerator</code>;</li>
+<li>dans la <b><code>Coroutine</code></b>, rajouter un point de synchronisation avec Unity pour lui rendre la main jusqu&rsquo;à la prochaine frame. Ceci se fait en utilisant le mot-clef <code>yield</code>;</li>
+<li>enfin, il faut démarrer la <b><code>Coroutine</code></b>.
+Ces 3 étapes sont résumées dans le code qui suit :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  StartCoroutine(<span style="color:#e6db74">&#34;LongProcess&#34;</span>);
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>IEnumerator LongProcess()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#66d9ef">for</span> (<span style="color:#66d9ef">int</span> i = <span style="color:#ae81ff">0</span>; i &lt; <span style="color:#ae81ff">100</span>; ++i)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    Debug.Log(gameObject.name + <span style="color:#e6db74">&#34;: Iteration #&#34;</span> + i);
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">null</span>;
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<p>On peut aussi créer un timer avec un délai en utilisant la même technique, mais cette fois-ci dans le <code>yield</code>, on retourne un objet de type <code>WaitForSeconds</code> qui va suspendre l&rsquo;exécution de la méthode pour un certain nombre de secondes.
+Par exemple, si on souhaite faire &ldquo;exploser&rdquo; un <b><code>GameObject</code></b> un certain nombre de secondes après que l&rsquo;utilisateur a appuyer sur la touche du haut, alors on pourrait faire comme ce qui suit :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> triggered = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex; background-color:#3c3d38"><span>  <span style="color:#66d9ef">if</span> (Input.GetAxis(<span style="color:#e6db74">&#34;Vertical&#34;</span>) &gt; <span style="color:#ae81ff">0.0</span> &amp;&amp; triggered == <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>  {
+</span></span><span style="display:flex;"><span>    triggered = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    StartCoroutine(<span style="color:#e6db74">&#34;Explode&#34;</span>);
+</span></span><span style="display:flex;"><span>  }
+</span></span><span style="display:flex;"><span>}
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>IEnumerator Explode()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex; background-color:#3c3d38"><span> <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> WaitForSeconds(<span style="color:#ae81ff">3.0f</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">var</span> rigidBody = GetComponent&lt;Rigidbody&gt;();
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">float</span> fx = Random.Range(-<span style="color:#ae81ff">500.0f</span>, <span style="color:#ae81ff">500.0f</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">float</span> fy = Random.Range(-<span style="color:#ae81ff">500.0f</span>, <span style="color:#ae81ff">500.0f</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">float</span> fz = Random.Range(-<span style="color:#ae81ff">500.0f</span>, <span style="color:#ae81ff">500.0f</span>);
+</span></span><span style="display:flex;"><span> rigidBody.AddForce(<span style="color:#66d9ef">new</span> Vector3(fx, fy, fz));
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">float</span> tx = Random.Range(-<span style="color:#ae81ff">50.0f</span>, <span style="color:#ae81ff">50.0f</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">float</span> ty = Random.Range(-<span style="color:#ae81ff">50.0f</span>, <span style="color:#ae81ff">50.0f</span>);
+</span></span><span style="display:flex;"><span> <span style="color:#66d9ef">float</span> tz = Random.Range(-<span style="color:#ae81ff">50.0f</span>, <span style="color:#ae81ff">50.0f</span>);
+</span></span><span style="display:flex;"><span> rigidBody.AddTorque(<span style="color:#66d9ef">new</span> Vector3(tx, ty, tz));
+</span></span><span style="display:flex;"><span> triggered = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<p>Comme vu ci-dessus, il est possible de démarrer une coroutine en passant son nom sous forme de <b><code>string</code></b> à la méthode <b><code>StartCoroutine</code></b>.
+Cette façon de faire à l&rsquo;avantage d&rsquo;être simple et suffit dans la grande majorité des cas.
+Cependant, elle présente 2 désavantages majeurs :</p>
+<ul>
+<li>Elle est plus coûteuse en temps d&rsquo;exécution.</li>
+<li>On ne peut passer qu&rsquo;un seul paramètre à la <b><code>Coroutine</code></b>.</li>
+</ul>
+<p>La 2ème approche consiste à passer directement la <b><code>Coroutine</code></b> avec ses paramètres au moment d&rsquo;appeler <b><code>StartCoroutine</code></b>.</p>
+<p>Enfin, il est possible d&rsquo;arrêter une <b><code>Coroutine</code></b> avec la méthode <b><code>StopCoroutine</code></b><sup id="fnref:8"><a href="#fn:8" class="footnote-ref" role="doc-noteref">8</a></sup>.</p>
+<p>L&rsquo;exemple suivant montre comment démarrer et arrêter une <b><code>Coroutine</code></b> à la demande.
+Il montre aussi comment passer 2 (ou plus) paramètres à une <b><code>Coroutine</code></b> :
+<div class="highlight"><div style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="background-color:#3c3d38"><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span></span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44
+</span><span style="white-space:pre;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;display:grid;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> System.Collections.Generic;
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> UnityEngine;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Coroutine_101</span> : MonoBehaviour
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> message = <span style="color:#e6db74">&#34;&#34;</span>;
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">float</span> delay = <span style="color:#ae81ff">0.0f</span>;
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">
+</span></span></span><span style="display:flex;"><span><span style="color:#a6e22e">    [SerializeField]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">bool</span> running = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex; background-color:#3c3d38"><span>    <span style="color:#66d9ef">private</span> IEnumerator myCoroutine;
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Start()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">void</span> Update()
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Input.GetAxis(<span style="color:#e6db74">&#34;Vertical&#34;</span>) &gt; <span style="color:#ae81ff">0.0</span> &amp;&amp; running == <span style="color:#66d9ef">false</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            myCoroutine = MyCoroutine(message, delay);
+</span></span><span style="display:flex;"><span>            StartCoroutine(myCoroutine);
+</span></span><span style="display:flex;"><span>            running = <span style="color:#66d9ef">true</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">if</span> (Input.GetAxis(<span style="color:#e6db74">&#34;Vertical&#34;</span>) &lt; <span style="color:#ae81ff">0.0</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex; background-color:#3c3d38"><span>            StopCoroutine(myCoroutine);
+</span></span><span style="display:flex;"><span>            running = <span style="color:#66d9ef">false</span>;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> IEnumerator MyCoroutine(<span style="color:#66d9ef">string</span> message, <span style="color:#66d9ef">float</span> delay)
+</span></span><span style="display:flex;"><span>    {
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">int</span> nbIterations = <span style="color:#ae81ff">0</span>;
+</span></span><span style="display:flex;"><span>        <span style="color:#66d9ef">while</span>(<span style="color:#66d9ef">true</span>)
+</span></span><span style="display:flex;"><span>        {
+</span></span><span style="display:flex;"><span>            <span style="color:#66d9ef">yield</span> <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> WaitForSeconds(delay);
+</span></span><span style="display:flex;"><span>            Debug.Log(<span style="color:#e6db74">&#34;MyCoroutine #&#34;</span> + nbIterations + <span style="color:#e6db74">&#34;\nmessage: &#34;</span> + message + <span style="color:#e6db74">&#34;\ndelay: &#34;</span> + delay);
+</span></span><span style="display:flex;"><span>            nbIterations++;
+</span></span><span style="display:flex;"><span>        }
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>}</span></span></code></pre></td></tr></table>
+</div>
+</div></p>
+<blockquote class="book-hint info">
+  <p><strong>Remarque</strong></p>
+<p>Il faut noter qu&rsquo;ici, on stocke le <b><code>IEnumerator</code></b> retourner par la <b><code>Coroutine</code></b> avant de la démarrer.
+C&rsquo;est nécessaire pour pouvoir l&rsquo;arrêter par la suite.
+Il est aussi possible d&rsquo;appeler <b><code>StopCoroutine</code></b> en passant le nom de la <b><code>Coroutine</code></b> sous forme de <b><code>string</code></b>.</p>
+
+</blockquote>
+
+<h2 id="slides">
+  Slides
+  <a class="anchor" href="#slides">#</a>
+</h2>
+<center>
+<iframe width="734" height="413" src=https://unity3d.ch/Slides/Chap3_Scripting.html frameborder="0" allowfullscreen></iframe>
+</center>
+
+<h2 id="références">
+  Références
+  <a class="anchor" href="#r%c3%a9f%c3%a9rences">#</a>
+</h2>
+<div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://docs.unity3d.com/ScriptReference/Debug.Log.html">Debug.Log, Unity</a>&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:2">
+<p><a href="https://docs.unity3d.com/Manual/EventFunctions.html">Event Functions, Unity</a>&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:3">
+<p><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.html">MonoBehavior, Unity</a>&#160;<a href="#fnref:3" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:4">
+<p><a href="https://docs.unity3d.com/Manual/ExecutionOrder.html">Order of execution for event functions, Unity</a>&#160;<a href="#fnref:4" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:5">
+<p><a href="https://docs.unity3d.com/ScriptReference/Object.Instantiate.html">Object.Instantiate, Unity</a>&#160;<a href="#fnref:5" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:6">
+<p><a href="https://docs.unity3d.com/ScriptReference/Object.Destroy.html">Object.Destroy, Unity</a>&#160;<a href="#fnref:6" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:7">
+<p><a href="https://docs.unity3d.com/Manual/Coroutines.html">Coroutines, Unity</a>&#160;<a href="#fnref:7" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+<li id="fn:8">
+<p><a href="https://docs.unity3d.com/ScriptReference/MonoBehaviour.StopCoroutine.html">StopCoroutine, Unity</a>&#160;<a href="#fnref:8" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
+</article>
+ 
+      
+
+
+
+
+  
+  
+  
+
+
+<p style="text-align: right; font-size:small"><strong>LAST MODIFIED</strong><br>February 14, 2022<br>Benoit Le Callennec<br>a7a3fae</p>
+
+
+      <footer class="book-footer">
+        
+  <div class="flex flex-wrap justify-between">
+
+
+
+
+
+
+
+<footer>&copy; HE-Arc 2020-2022 - Tous droits réservés.</footer>
+
+</div>
+ 
+        
+      </footer>
+
+      
+  
+  <div class="book-comments">
+
+</div>
+  
+ 
+
+      <label for="menu-control" class="hidden book-menu-overlay"></label>
+    </div>
+
+    
+    <aside class="book-toc">
+      
+  <nav id="TableOfContents">
+  <ul>
+    <li><a href="#hello-world">Hello World</a></li>
+    <li><a href="#event-functions">Event Functions</a></li>
+    <li><a href="#timedeltatime">Time.DeltaTime</a></li>
+    <li><a href="#modifier-des-bcodegameobjectscodeb-à-lexécution">Modifier des <b><code>GameObjects</code></b> à l&rsquo;exécution</a>
+      <ul>
+        <li><a href="#modifier-les-bcodecomponentscodeb-du-même-bcodegameobjectcodeb">Modifier les <b><code>Components</code></b> du même <b><code>GameObject</code></b></a></li>
+        <li><a href="#modifier-les-bcodecomponentscodeb-dautres-bcodegameobjectscodeb-connus">Modifier les <b><code>Components</code></b> d&rsquo;autres <b><code>GameObjects</code></b> connus</a></li>
+        <li><a href="#modifier-les-bcodecomponentscodeb-dautres-bcodegameobjectscodeb-créés-dynamiquement">Modifier les <b><code>Components</code></b> d&rsquo;autres <b><code>GameObjects</code></b> créés dynamiquement</a></li>
+      </ul>
+    </li>
+    <li><a href="#recherche-de-bcodegameobjectscodeb-à-lexécution">Recherche de <b><code>GameObjects</code></b> à l&rsquo;exécution</a></li>
+    <li><a href="#instancier-et-détruire-des-bcodegameobjectscodeb-à-lexécution">Instancier et détruire des <b><code>GameObjects</code></b> à l&rsquo;exécution</a></li>
+    <li><a href="#user-inputs">User Inputs</a></li>
+    <li><a href="#coroutines">Coroutines</a></li>
+    <li><a href="#slides">Slides</a></li>
+    <li><a href="#références">Références</a></li>
+  </ul>
+</nav>
+
+ 
+    </aside>
+    
+  </main>
+
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
